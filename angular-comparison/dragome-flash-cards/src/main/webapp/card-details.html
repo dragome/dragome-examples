@@ -1,0 +1,98 @@
+<html class="ng-scope">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>Flashcards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- Twitter bootstrap styles -->
+<link rel="stylesheet" type="text/css" href="lib/twitter-bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="lib/twitter-bootstrap/css/bootstrap-responsive.css">
+
+<!-- Own styles -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="body-container" data-template="panel">
+		<div class="container">
+			<header style="background-image: url('img/header.jpg');">
+				<div class="page-header">
+					<h1>
+						Flashcards <small style="color: #359">with Dragome</small>
+					</h1>
+				</div>
+				<div class="navbar ng-scope">
+					<div class="navbar-inner">
+						<div class="container">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+							</a> <a class="brand" href="##" data-template="home-link">Flashcards</a>
+							<div class="nav-collapse collapse navbar-responsive-collapse">
+								<ul class="nav">
+									<li><a href="#hilfe">Help</a></li>
+									<li><a href="#links">Links</a></li>
+									<li><a href="#impressum">Contacts</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div>
+				<div class="row-fluid ng-scope">
+					<div class="span12">
+						<h2 class="ng-binding">
+							Flashcards »<span data-template="title">Swiss history</span>«
+						</h2>
+					</div>
+				</div>
+				<div class="row-fluid ng-scope">
+					<div class="span8">
+						<div class="progress">
+							<div class="bar bar-success" style="width: 33%;" id="progress-bar" data-attribute-template-style="width: ${template:percentage-value}%;">
+								<span class="ng-binding" style="display: block;"><span  data-template="percentage-label">0%</span></span>
+							</div>
+						</div>
+
+						<div class="post">
+							<div class="alert alert-info question">
+								<h3>Question</h3>
+								<h4 class="ng-binding">
+									<span data-template="question">When was the Confederation gegröndet?</span>
+								</h4>
+							</div>
+							<div class="alert alert-success answer">
+								<h3>Answer</h3>
+								<h4 data-template="question-mark">?</h4>
+								<h4 class="ng-binding dragome-hide" data-template="answer-panel">
+									<i><span data-template="answer"><b>In 1291</b></span></i>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="span4" id="sidebar">
+						<div id="carddeck-navigation row-fluid">
+							<button class="btn span6 margin-bottom" data-template="back-button">
+								<i class="icon-chevron-left">
+								</i> Back
+							</button>
+							<button class="btn btn-primary span6 margin-bottom" data-template="show-answer-button">
+								<i class="icon-eye-open icon-white"></i> Show answer
+							</button>
+							<button class="btn btn-primary span6 margin-bottom dragome-hide"  data-template="more-button">
+								<i class="icon-chevron-right icon-white"></i> More
+							</button>
+						</div>
+						<div class="row-fluid">
+							<div class="span12">
+								<h4>Current index</h4>
+								<p class="ng-binding"><span data-template="number-of-cards">4</span> Cards</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

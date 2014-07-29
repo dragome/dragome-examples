@@ -1,0 +1,78 @@
+/**
+ * 	Description:	Stylesheet which defines basic style rules.
+ *  Authors:		Marc Baur, Adrian Herzog
+ */
+
+/********************************************************************************/
+/** LAYERS **/
+/********************************************************************************/
+
+#footer {
+	width:100%;
+	float:left;
+	text-align: center;
+	padding-top: 20px;
+	border-top: 1px solid #FFF;
+}
+
+/********************************************************************************/
+/** NAVIGATION **/
+/********************************************************************************/
+
+nav#top-navigation {
+	height: 40px;
+	width: 100%;
+	background: #FFF;
+	margin-bottom: 30px;
+}
+
+nav#top-navigation ul {
+	padding: 0;
+	margin: 0 auto;
+	height: 40px;
+}
+
+nav#top-navigation li {
+	display: inline;
+	float: left;
+}
+
+nav#top-navigation a {
+	color: #000;
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+nav#top-navigation li a {
+}
+
+nav#top-navigation li:last-child a {
+}
+
+nav#top-navigation a:hover, nav#top-navigation a:active, nav#top-navigation a.active {
+	background-color: #7fac8a;
+	color: #FFF;
+}
+
+/********************************************************************************/
+/** Flashcards **/
+/********************************************************************************/
+
+#carddeck-navigation .btn {
+    margin-bottom: 5px;
+}
+
+.question h3, .answer h3 {
+    margin-top: 0;
+}
+
+.question h4, .answer h4 {
+    margin-bottom: 5px;
+}
+
+.margin-bottom {
+    margin-bottom: 8px;
+}

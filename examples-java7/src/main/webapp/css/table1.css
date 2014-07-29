@@ -1,0 +1,27 @@
+table {
+	width: 40%;
+	border-collapse: collapse;
+}
+
+th {
+	background: #333;
+	color: white;
+}
+
+td,th {
+	padding: 6px;
+	border: 1px solid #ccc;
+	text-align: left;
+	width: 200px;
+}
+
+* {
+	font-size: 15px;
+	line-height: 1.0em;
+	font-family: "Oxygen", sans-serif;
+	line-height: 1.0em;
+}
+
+input[type='text'] {
+	width: 100%;
+}

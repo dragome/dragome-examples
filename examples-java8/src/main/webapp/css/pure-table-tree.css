@@ -1,0 +1,21 @@
+.treeTable {
+	font-family: Verdana, Bitstream Vera Sans, sans-serif;
+	font-size: 10px;
+	border: 0px solid;
+	border-collapse: collapse;
+}
+
+.treeTable td {
+	padding: 0;
+	border: 0px solid;
+}
+
+.leafText {
+	position: relative;
+	vertical-align: super;
+}
+
+.blankSpace {
+	width: 22px;
+	height: 22px;
+}

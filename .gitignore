@@ -1,0 +1,5 @@
+*/target/**
+.settings/
+/target/
+compiled-js/
+WEB-INF/classes/

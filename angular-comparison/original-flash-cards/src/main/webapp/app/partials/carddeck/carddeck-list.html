@@ -1,0 +1,14 @@
+<div id="content">
+	<h2>Overview flashcards</h2>
+	<div class="row-fluid">
+		<div ng-repeat="carddeck in carddecks" class="span4">
+			<div class="thumbnail">
+				<a href="#karten/lernkartei/{{carddeck.id}}" title="Lernkartei #{{carddeck.id}} auswählen">
+					<img ng-src="img/{{carddeck.coverImage}}">
+				</a>
+				<h3>{{carddeck.title}}</h3>
+				<p>{{carddeck.numberOfCards}} Cards</p>
+			</div>
+		</div>
+	</div>
+</div>

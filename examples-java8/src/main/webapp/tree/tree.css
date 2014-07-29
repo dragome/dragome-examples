@@ -1,0 +1,21 @@
+.treeTable {
+	font-family: 'Source Sans Pro', "Trebuchet MS",Helvetica,Jamrul,sans-serif;
+	font-size: 12px;
+	border: 0px solid;
+	border-collapse: collapse;
+}
+
+.treeTable td {
+	padding: 0;
+	border: 0px solid;
+}
+
+.leafText {
+	position: relative;
+	margin-left: 4px;
+}
+
+.blankSpace {
+	width: 22px;
+	height: 22px;
+}

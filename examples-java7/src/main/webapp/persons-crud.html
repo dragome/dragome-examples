@@ -1,0 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/overrides.css" />
+<script type="text/javascript" src="dragome-resources/dragome-debug.js"></script>
+</head>
+
+<body>
+	<div style="margin-left: 50px; width: 1000px" class="container docs-filters row-fluid">
+		<h2>List of persons</h2>
+		<div class="row-fluid show-grid">
+			<button type="submit" class="btn btn-danger" style="margin: 10px" data-template="add-button">
+				<i class="icon-plus-sign icon-white"></i> Add person
+			</button>
+			<button type="submit" class="btn btn-danger" style="margin: 10px" data-template="save-button">
+				<i class="icon-ok icon-white"></i> Save persons
+			</button>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Last name</th>
+						<th>Nickname</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-template="row">
+						<td class="span2"><span data-template="givenName">Juan</span></td>
+						<td class="span2"><span data-template="surname">Perez</span></td>
+						<td class="span2"><span data-template="nickname">JP</span></td>
+						<td class="span2">
+							<button type="submit" class="btn btn-primary" data-template="delete-button">
+								<i class="icon-remove icon-white"></i> delete
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

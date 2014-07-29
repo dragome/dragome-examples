@@ -1,0 +1,21 @@
+ul.explorertree li {
+	list-style-position: inside;
+}
+
+ul.explorertree,ul.explorertree ul,ul.explorertree li {
+	margin: 0;
+	padding: 0;
+}
+
+ul.explorertree ul {
+	padding-left: 20px;
+}  /* sublist indentation */ /* Set the bullet images */
+
+/* Actually show and hide sublists */
+ul.explorertree li.explorertree-open ul {
+	display: block;
+}
+
+ul.explorertree li.explorertree-closed ul {
+	display: none;
+}

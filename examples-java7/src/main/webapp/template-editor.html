@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/overrides.css" />
+<link rel="stylesheet" type="text/css" href="dragome/dragome.css" />
+<script type="text/javascript" src="dragome/dragome.js"></script>
+</head>
+
+<body>
+	<div style="margin-left: 50px; width: 1000px" class="container docs-filters row-fluid">
+		<h2>Template Editor</h2>
+		<div class="row-fluid show-grid">
+			<button type="submit" class="btn btn-danger" style="margin: 10px" data-template="add-button">
+				<i class="icon-plus-sign icon-white"></i> Add replacement
+			</button>
+			<button type="submit" class="btn btn-danger" style="margin: 10px" data-template="update-button">
+				<i class="icon-ok icon-white"></i> Update
+			</button>
+
+			<div>
+				<table style="width: 100%;" border="0">
+					<tr>
+						<td width="100px">replacements:</td>
+						<td>
+							<div class="col-fluid show-grid">
+								<div data-template="replacements" class="to-be-removed" style="height: 50px;">
+									<input type="text" data-template="replacement" class="span2" />
+									<button type="submit" class="btn btn-primary" data-template="delete-button">
+										<i class="icon-remove icon-white"></i> delete
+									</button>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>template:</td>
+						<td><textarea data-template="template" style="width: 100%; height: 200px;"></textarea></td>
+					</tr>
+					<tr>
+						<td>result:</td>
+						<td><textarea data-template="result" style="width: 100%; height: 200px;"></textarea></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

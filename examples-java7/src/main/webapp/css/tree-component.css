@@ -1,0 +1,37 @@
+ul.folderandfiletree li { 
+  list-style-image: url(/dragome/images/tree/vertbranch.gif); 
+  background-image: url(/dragome/images/tree/dotted.gif);
+  background-repeat: repeat-y; 
+  cursor: pointer; 
+}
+ul.folderandfiletree li:last-child {
+  background-repeat: no-repeat; 
+  list-style-image: url(/dragome/images/tree/dottedend.gif);
+}
+ul.folderandfiletree li.explorertree-open::before {
+  content: url(/dragome/images/tree/folderopen.gif);
+}
+ul.folderandfiletree li.explorertree-open { 
+  list-style-image: url(/dragome/images/tree/minusmid.gif); 
+}
+ul.folderandfiletree li.explorertree-open:last-child {
+  background-image: none; 
+  list-style-image: url(/dragome/images/tree/minusend.gif);
+}
+ul.folderandfiletree li.explorertree-closed::before {
+  content: url(/dragome/images/tree/folderclosed.gif);
+}
+ul.folderandfiletree li.explorertree-closed {
+  list-style-image: url(/dragome/images/tree/plusmid.gif); 
+}
+ul.folderandfiletree li.explorertree-closed:last-child {
+  background-image: none; 
+  list-style-image: url(/dragome/images/tree/plusend.gif);
+}
+ul.folderandfiletree a::before {
+  text-decoration: none;
+  content: url(/dragome/images/tree/file.gif);
+}
+ul.folderandfiletree a[href$=".zip"]::before {
+  content: url(/dragome/images/tree/zip.gif);
+}

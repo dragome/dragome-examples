@@ -1,0 +1,119 @@
+select.validationError,input.validationError,.gwt-pectin-ComboBoxWithOther.validationError input,.gwt-pectin-ComboBoxWithOther.validationError td select
+	{
+	background-color: lightcoral;
+}
+
+.AbstractDemo-Content {
+	padding: 0.5em;
+}
+
+.AbstractDemo-Blurb {
+	padding: 0.5em;
+	color: #555555;
+}
+
+.AbstractDemo-Blurb p {
+	margin: 0 0 0.5em 0;
+	padding: 0;
+}
+
+.AbstractDemo-Aside {
+	padding: 0.5em;
+	width: 180px;
+	color: #333333;
+}
+
+.AbstractDemo-Footer {
+	padding: 1.2em 0.5em 0 0.5em;
+}
+
+.AbstractDemo-Footer a {
+	color: #333333;
+	margin-right: 1em;
+}
+
+.AbstractDemo-Footer a:hover {
+	color: black;
+}
+
+.AbstractDemo-Footer a:visited {
+	color: #333333;
+}
+
+.VerySimpleForm-Widgets {
+	padding-bottom: 4px;
+}
+
+.VerySimpleForm-Label {
+	color: #666666;
+	font-weight: bold;
+	font-size: 75%;
+	text-align: right;
+	padding-right: 0.5em;
+	padding-bottom: 4px;
+}
+
+.verticalAlignTop {
+	vertical-align: top;
+	padding-top: 3px;
+}
+
+.VerySimpleForm-GapRow {
+	/* eeeek.. just awful...*/
+	height: 8px;
+	font-size: 20%;
+}
+
+.VerySimpleForm-Note {
+	color: #999999;
+}
+
+.VerySimpleForm-Hint {
+	color: #999999;
+}
+
+.LordVadar {
+	color: white;
+	background-color: black;
+}
+
+.VerySimpleForm-Label .validationError {
+	color: red;
+}
+
+.VerySimpleForm-Label .validationError:before {
+	content: "* ";
+}
+
+.VerySimpleForm-Label .disabled {
+	color: #bbbbbb;
+}
+
+.LordVadar {
+	color: white;
+	background-color: black;
+}
+
+.pectin-ValidationDisplayPanel {
+	
+}
+
+.pectin-ValidationDisplayPanel .Message,.pectin-ValidationDisplayLabel {
+	font-size: 90%;
+	font-style: italic;
+}
+
+.pectin-ValidationDisplayPanel .Message-validationError,.pectin-ValidationDisplayLabel-validationError
+	{
+	color: #D8000C;
+}
+
+.pectin-ValidationDisplayPanel .Message-validationWarning,.pectin-ValidationDisplayLabel-validationWarning
+	{
+	color: #9F9f00;
+}
+
+.pectin-ValidationDisplayPanel .Message-validationInfo,.pectin-ValidationDisplayLabel-validationInfo
+	{
+	color: #00529B;
+}
