@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.pirulo</groupId>
-  <artifactId>app1</artifactId>
+  <groupId>com.dragome</groupId>
+  <artifactId>examples-java8</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>app1 Maven Webapp</name>
+  <version>1.0</version>
+  <name>examples-java8</name>
   <url>http://maven.apache.org</url>
 
   <repositories>
@@ -46,7 +46,7 @@
   </dependencies>
 
   <build>
-    <finalName>app1</finalName>
+    <finalName>examples-java8</finalName>
     <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
@@ -65,7 +65,7 @@
         <configuration>
           <webApp>
             <defaultsDescriptor>${basedir}/src/main/resources/webdefault.xml</defaultsDescriptor>
-            <contextPath>/my-app1</contextPath>
+            <contextPath>/examples</contextPath>
           </webApp>
           <classesDirectory>${basedir}/src/main/webapp/WEB-INF/classes</classesDirectory>
           <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
