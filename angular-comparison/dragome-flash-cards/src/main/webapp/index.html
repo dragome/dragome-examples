@@ -1,62 +1,7 @@
-<!DOCTYPE HTML>
-<!--
-#Description:	Entry page which loads all needed CSS and Javascript files for the Flashcards application.
-#Author:		Marc Baur, Adrian Herzog
--->
-
-<html ng-app="Flashcards">
+<html>
 <head>
-<title>Flashcards</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<!-- jQuery libraries -->
-<script src="lib/jquery/jquery-1.9.1.min.js"></script>
-
-<!-- Twitter bootstrap styles -->
-<link rel="stylesheet" type="text/css" href="lib/twitter-bootstrap/css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="lib/twitter-bootstrap/css/bootstrap-responsive.css" />
-<script src="lib/twitter-bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Own styles -->
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-
-<!-- AngularJS libraries -->
-<script src="lib/angular/angular-1.1.4.min.js"></script>
-<script src="lib/angular/angular-1.1.4-resource.min.js"></script>
-
-<!-- Own js code, uses the AngularJS libraries -->
-<script src="js/modules.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/factories.js"></script>
-<script src="js/routes.js"></script>
+<meta http-equiv="refresh" content="0; url=run.html?deck" />
 </head>
 <body>
-	<div class="container">
-		<header style="background-image:url('img/header.jpg');">
-			<div class="page-header">
-				<h1>
-					Flashcards <small style="color: #359">with AngularJS and REST</small>
-				</h1>
-			</div>
-			<div class="navbar" ng-controller='NavigationController'>
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-						</a> <a class="brand" href="#lernkartei">Flashcards</a>
-						<div class="nav-collapse collapse navbar-responsive-collapse">
-							<ul class="nav">
-								<li ng-class="{active: $route.current.activeTab =='hilfe'}"><a href="#hilfe">Help</a></li>
-								<li ng-class="{active: $route.current.activeTab =='links'}"><a href="#links">Links</a></li>
-								<li ng-class="{active: $route.current.activeTab =='impressum'}"><a href="#impressum">Contacts</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<div ng-view>
-			<!-- AngularJS views are added here at runtime. -->
-		</div>
-	</div>
 </body>
 </html>

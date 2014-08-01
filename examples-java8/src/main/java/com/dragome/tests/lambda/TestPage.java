@@ -8,7 +8,7 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl.html
  ******************************************************************************/
-package com.dragome.tests;
+package com.dragome.tests.lambda;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -16,7 +16,6 @@ import junit.textui.TestRunner;
 
 import com.dragome.annotations.PageAlias;
 import com.dragome.debugging.execution.DragomeVisualActivity;
-import com.dragome.tests.bugs.TestTryBug;
 
 @PageAlias(alias="tests")
 public class TestPage extends DragomeVisualActivity
@@ -37,10 +36,7 @@ public class TestPage extends DragomeVisualActivity
 			}
 		};
 		TestSuite testSuite= new TestSuite();
-		testSuite.addTestSuite(TestTryBug.class);
-//		testSuite.addTestSuite(TestLambda1.class);
-//		testSuite.addTestSuite(TestDefaultMethods.class);
-//		testSuite.addTestSuite(LambdaTest.class);
+		testSuite.addTestSuite(StreamTests.class);
 		testRunner.doRun(testSuite);
 		
 //		TestLambda1.main(null);

@@ -16,9 +16,13 @@ import java.util.Comparator;
 import java.util.function.BinaryOperator;
 import java.util.function.Supplier;
 
+import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
+
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
+@DragomeCompilerSettings(CompilerType.Standard)
 public class TestLambda1 extends TestCase
 {
 	private int instanceVar= 0;

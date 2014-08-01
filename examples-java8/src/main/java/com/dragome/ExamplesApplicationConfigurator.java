@@ -11,31 +11,37 @@
 package com.dragome;
 
 import com.dragome.callbackevictor.CallbackEvictorConfigurator;
-import com.dragome.commons.CompositeIntrumentationDragomeConfigurator;
+import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.ExecutionHandler;
+import com.dragome.commons.compiler.annotations.CompilerType;
 import com.dragome.examples.model.Person;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class ExamplesApplicationConfigurator extends CompositeIntrumentationDragomeConfigurator
+public class ExamplesApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
-	private CallbackEvictorConfigurator callbackEvictorConfigurator;
-	private MethodLoggerConfigurator methodLoggerConfigurator;
+    private CallbackEvictorConfigurator callbackEvictorConfigurator;
+    private MethodLoggerConfigurator methodLoggerConfigurator;
 
-	public ExamplesApplicationConfigurator()
-	{
-		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-		callbackEvictorConfigurator.setEnabled(false);
+    public ExamplesApplicationConfigurator()
+    {
+	callbackEvictorConfigurator= new CallbackEvictorConfigurator();
+	callbackEvictorConfigurator.setEnabled(false);
 
-		methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName());
-		methodLoggerConfigurator.setEnabled(true);
+	methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName());
+	methodLoggerConfigurator.setEnabled(true);
 
-		init(callbackEvictorConfigurator, methodLoggerConfigurator);
-	}
+	init(callbackEvictorConfigurator, methodLoggerConfigurator);
+    }
 
-	public ExecutionHandler getExecutionHandler()
-	{
-		return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
-	}
+    public ExecutionHandler getExecutionHandler()
+    {
+	return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
+    }
+
+    public CompilerType getDefaultCompilerType()
+    {
+	return CompilerType.Standard;
+    }
 }

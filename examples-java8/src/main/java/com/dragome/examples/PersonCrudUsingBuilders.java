@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dragome.annotations.PageAlias;
+import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
 import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.model.Person;
 import com.dragome.examples.service.PersonService;
@@ -25,7 +27,8 @@ import com.dragome.model.interfaces.VisualButton;
 import com.dragome.model.interfaces.VisualLabel;
 import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.interfaces.VisualTextField;
-
+ 
+@DragomeCompilerSettings(CompilerType.Strict)
 @PageAlias(alias= "crud2")
 public class PersonCrudUsingBuilders extends DragomeVisualActivity
 {

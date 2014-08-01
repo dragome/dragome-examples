@@ -6,6 +6,8 @@ import static com.dragome.model.listeners.KeyListener.KEY_ESC;
 import java.util.stream.Stream;
 
 import com.dragome.annotations.PageAlias;
+import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
 import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.examples.todo.model.TodoManager;
@@ -19,7 +21,7 @@ import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
 
-@PageAlias(alias= "todo")
+@PageAlias(alias= "todomvc")
 public class TodosPage extends DragomeVisualActivity
 {
 	public void build()

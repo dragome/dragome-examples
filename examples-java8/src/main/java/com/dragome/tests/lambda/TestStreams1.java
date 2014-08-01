@@ -18,6 +18,10 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
+
+@DragomeCompilerSettings(CompilerType.Standard)
 public class TestStreams1
 {
 	public static void main(String[] args)

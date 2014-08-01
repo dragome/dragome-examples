@@ -391,7 +391,7 @@ public class HibernateDetachUtility
 
 			// now go through each item in the map and null out their internal fields
 			for (Object key : originalMap.keySet())
-			{
+			{ 
 				nullOutUninitializedFields(originalMap.get(key), checkedObjectMap, checkedObjectCollisionMap, depth + 1, serializationType);
 				nullOutUninitializedFields(key, checkedObjectMap, checkedObjectCollisionMap, depth + 1, serializationType);
 			}
@@ -404,7 +404,7 @@ public class HibernateDetachUtility
 
 		if (serializationType == SerializationType.JAXB)
 		{
-			XmlAccessorType at= value.getClass().getAnnotation(XmlAccessorType.class);
+			XmlAccessorType at= (XmlAccessorType) value.getClass().getAnnotation(XmlAccessorType.class);
 			if (at != null && at.value() == XmlAccessType.FIELD)
 			{
 				nullOutFieldsByFieldAccess(value, checkedObjectMap, checkedObjectCollisionMap, depth, serializationType);
