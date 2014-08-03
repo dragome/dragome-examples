@@ -19,6 +19,20 @@
     </repository>
   </repositories>
 
+    <pluginRepositories>
+    <pluginRepository>
+      <id>dragome</id>
+      <name>dragome</name>
+      <url>https://raw.github.com/dragome/dragome/master/maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
 
   <dependencies>
     <dependency>
@@ -71,7 +85,7 @@
           <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
           <connectors>
             <connector implementation="org.eclipse.jetty.server.ServerConnector">
-              <port>4016</port>
+              <port>8080</port>
               <maxIdleTime>7000000</maxIdleTime>
             </connector>
           </connectors>

@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.dragome</groupId>
+  <artifactId>dragome-angular-comparison</artifactId>
+  <packaging>pom</packaging>
+  <version>0.95-beta1</version>
+  <name>dragome-angular-comparison</name>
+
+  <modules>
+    <module>original-flash-cards</module>
+    <module>dragome-flash-cards</module>
+  </modules>
+
+  <build>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>com.dragome</groupId>
+      <artifactId>dragome-sdk</artifactId>
+      <version>0.95-beta1</version>
+    </dependency>
+  </dependencies>
+</project>
