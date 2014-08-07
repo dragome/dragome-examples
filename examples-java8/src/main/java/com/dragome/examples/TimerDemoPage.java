@@ -1,7 +1,8 @@
-package com.dragome.examples.animation;
+package com.dragome.examples;
 
 import com.dragome.annotations.PageAlias;
 import com.dragome.debugging.execution.DragomeVisualActivity;
+import com.dragome.examples.animation.Timer;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.model.interfaces.VisualBounds;
 import com.dragome.model.interfaces.VisualButton;

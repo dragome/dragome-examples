@@ -15,7 +15,7 @@ import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.ExecutionHandler;
 import com.dragome.commons.compiler.annotations.CompilerType;
-import com.dragome.examples.animation.TimerDemoPage;
+import com.dragome.examples.TimerDemoPage;
 import com.dragome.examples.model.Person;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 

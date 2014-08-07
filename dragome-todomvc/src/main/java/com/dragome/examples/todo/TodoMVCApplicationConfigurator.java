@@ -10,15 +10,17 @@
  ******************************************************************************/
 package com.dragome.examples.todo;
 
-import com.dragome.commons.DragomeConfigurator;
+import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
+import com.dragome.examples.todo.model.Todo;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class TodoMVCApplicationConfigurator extends MethodLoggerConfigurator implements DragomeConfigurator
+public class TodoMVCApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
-	public TodoMVCApplicationConfigurator()
-	{
-		includedPaths.add("com.dragome.examples.todo.model");
-	}
+    public TodoMVCApplicationConfigurator()
+    {
+	MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(Todo.class.getPackage().getName());
+	init(methodLoggerConfigurator);
+    }
 }
