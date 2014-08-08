@@ -21,7 +21,7 @@ import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
 
-@PageAlias(alias= "jamon")
+@PageAlias(alias= "todo-mvc")
 public class TodosPage extends DragomeVisualActivity
 {
 	public void build()
