@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2011-2014 Fernando Petrola
+ * 
+ *  This file is part of Dragome SDK.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU Public License v3.0
+ * which accompanies this distribution, and is available at
+ * http://www.gnu.org/licenses/gpl.html
+ ******************************************************************************/
 package com.dragome.examples.todo.view;
 
 import static com.dragome.model.listeners.KeyListener.KEY_ENTER;
@@ -6,8 +16,6 @@ import static com.dragome.model.listeners.KeyListener.KEY_ESC;
 import java.util.stream.Stream;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.commons.compiler.annotations.CompilerType;
-import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
 import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.examples.todo.model.TodoManager;
@@ -21,7 +29,7 @@ import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
 
-@PageAlias(alias= "jamon")
+@PageAlias(alias= "todo-mvc")
 public class TodosPage extends DragomeVisualActivity
 {
 	public void build()
