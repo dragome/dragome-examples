@@ -7,19 +7,7 @@
   <name>examples-java8</name>
   <url>http://maven.apache.org</url>
 
-<!--
-  <repositories>
-    <repository>
-      <id>JBOSS_NEXUS</id>
-      <url>http://repository.jboss.org/nexus/content/groups/public</url>
-    </repository>
-    <repository>
-      <id>dragome</id>
-      <name>dragome</name>
-      <url>https://raw.github.com/dragome/dragome/master/maven</url>
-    </repository>
-  </repositories>
--->
+  <!-- <repositories> <repository> <id>JBOSS_NEXUS</id> <url>http://repository.jboss.org/nexus/content/groups/public</url> </repository> <repository> <id>dragome</id> <name>dragome</name> <url>https://raw.github.com/dragome/dragome/master/maven</url> </repository> </repositories> -->
 
   <pluginRepositories>
     <pluginRepository>
@@ -115,6 +103,39 @@
         <configuration>
           <port>8081</port>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+        <configuration>
+          <wait>false</wait>
+          <container>
+            <containerId>jetty9x</containerId>
+            <type>embedded</type>
+          </container>
+          <configuration>
+            <properties>
+              <cargo.servlet.port>8080</cargo.servlet.port>
+            </properties>
+          </configuration>
+        </configuration>
+        <executions>
+          <execution>
+            <id>start-server</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>start</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>stop-server</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>stop</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

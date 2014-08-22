@@ -15,6 +15,7 @@ import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.ExecutionHandler;
 import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.examples.ContinuationExample;
 import com.dragome.examples.TimerDemoPage;
 import com.dragome.examples.model.Person;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
@@ -28,9 +29,9 @@ public class ExamplesApplicationConfigurator extends ChainedInstrumentationDrago
     public ExamplesApplicationConfigurator()
     {
 	callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-	callbackEvictorConfigurator.setEnabled(false);
+	callbackEvictorConfigurator.setEnabled(true);
 
-	methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName());
+	methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName());
 	methodLoggerConfigurator.setEnabled(true);
 
 	init(callbackEvictorConfigurator, methodLoggerConfigurator);

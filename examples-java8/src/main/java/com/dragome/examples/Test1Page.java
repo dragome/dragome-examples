@@ -15,10 +15,10 @@ public class Test1Page extends DragomeVisualActivity
 	templateHandlingStrategy.loadMainTemplate("test1");
 
 	Person person= new Person();
-	ComponentBuilder<Person> componentBuilder= new ComponentBuilder<Person>(mainPanel, person);
+	ComponentBuilder componentBuilder= new ComponentBuilder(mainPanel);
 
-	componentBuilder.bindTemplate("input").as(VisualTextField.class).toProperty(Person::getGivenName, Person::setGivenName).build();
-	componentBuilder.bindTemplate("text").as(VisualLabel.class).toProperty(Person::getGivenName, Person::setGivenName).build();
+	componentBuilder.bindTemplate("input").as(VisualTextField.class).toProperty(person::getGivenName, person::setGivenName).build();
+	componentBuilder.bindTemplate("text").as(VisualLabel.class).toProperty(person::getGivenName, person::setGivenName).build();
 
     }
 }

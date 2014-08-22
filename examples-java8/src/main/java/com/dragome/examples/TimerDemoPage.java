@@ -20,7 +20,7 @@ public class TimerDemoPage extends DragomeVisualActivity
 
     public void build()
     {
-	ComponentBuilder<?> componentBuilder= new ComponentBuilder<>(mainPanel, this);
+	ComponentBuilder componentBuilder= new ComponentBuilder(mainPanel);
 
 	componentBuilder.bindTemplate("moveButton").as(VisualButton.class).onClick(() -> setSpeed(speed + 3)).build();
 	componentBuilder.bindTemplate("pauseButton").as(VisualButton.class).onClick(() -> setSpeed(speed - 3)).build();
