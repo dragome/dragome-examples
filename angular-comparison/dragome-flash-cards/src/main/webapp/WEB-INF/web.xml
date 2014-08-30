@@ -59,15 +59,15 @@
   </filter-mapping>
 
   <servlet>
-    <description>AtmosphereServlet</description>
-    <servlet-name>AtmosphereServlet</servlet-name>
-    <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+    <description>DragomeWebSocketFilter</description>
+    <servlet-name>DragomeWebSocketFilter</servlet-name>
+    <servlet-class>com.dragome.serverside.servlets.DragomeWebSocketFilter</servlet-class>
     <init-param>
       <param-name>org.atmosphere.cpr.packages</param-name>
       <param-value>com.dragome.serverside.debugging.websocket</param-value>
     </init-param>
     <init-param>
-      <param-name>org.atmosphere.websocket.maxTextMessageSizel</param-name>
+      <param-name>org.atmosphere.websocket.maxTextMessageSize</param-name>
       <param-value>100000</param-value>
     </init-param>
     <init-param>
@@ -82,7 +82,7 @@
     <async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
-    <servlet-name>AtmosphereServlet</servlet-name>
+    <servlet-name>DragomeWebSocketFilter</servlet-name>
     <url-pattern>/dragome-websocket/*</url-pattern>
   </servlet-mapping>
 
