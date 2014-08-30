@@ -12,15 +12,15 @@ package com.dragome.examples.crudgrid;
 
 import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
-import com.dragome.examples.crudgrid.model.Todo;
+import com.dragome.examples.crudgrid.model.CrudGrid;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class TodoMVCApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
+public class CrudGridApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
-    public TodoMVCApplicationConfigurator()
+    public CrudGridApplicationConfigurator()
     {
-	MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(Todo.class.getPackage().getName());
+	MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(CrudGrid.class.getPackage().getName());
 	init(methodLoggerConfigurator);
     }
 }
