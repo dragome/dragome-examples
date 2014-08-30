@@ -4,5 +4,6 @@ public interface Item
 {
     boolean isEditMode();
     void setEditMode(boolean editMode);
-    Object getObject();
+    Identifiable getObject();
+    void setObject(Identifiable object);
 }
