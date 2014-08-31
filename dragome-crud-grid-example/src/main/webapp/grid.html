@@ -8,66 +8,65 @@
 
 
 <body>
-<div ng-show="loading" data-template="loading">Loading...</div>
+<div data-template="loading">Loading...</div>
 <div class="input-group col-md-5 row filter">
     <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>
-    <input type="text" class="form-control" ng-model="filter"  data-template="filter">
-    <span class="input-group-addon btn btn-default" ng-disabled="filter.length == 0" ng-click="filter = ''"  data-template="remove-filter"><i class="glyphicon glyphicon-remove"></i></span>
+    <input type="text" class="form-control" data-template="filter">
+    <span class="input-group-addon btn btn-default" data-template="remove-filter"><i class="glyphicon glyphicon-remove"></i></span>
 </div>
 
 <table class="crud-grid table table-striped table-bordered table-condensed table-hover">
     <tr>
         <th class="col-md-1">
-            <div class="btn-toolbar"><i class="btn btn-default glyphicon" ng-class="{'glyphicon-minus': addMode, 'glyphicon-plus': !addMode}" ng-click="toggleAddMode()"  data-template="add-mode-toggler"></i></div>
+            <div class="btn-toolbar"><i class="btn btn-default glyphicon" data-template="add-mode-toggler"></i></div>
         </th>
 
-        <th ng-repeat="column in columns" ng-class="column.class" ng-click="setOrderBy(column.name)"  data-template="table-header">
+        <th data-template="table-header">
             <div>
                 <span data-template="column-name"></span>
-                <i class="glyphicon" ng-class="{'glyphicon-sort-by-alphabet': orderBy.asc, 'glyphicon-sort-by-alphabet-alt': !orderBy.asc}" ng-show="orderBy.field == '{{column.name}}'"  data-template="order-icon"></i>
+                <i class="glyphicon" data-template="order-icon"></i>
             </div>
         </th>
     </tr>
-    <tr ng-show="addMode"  data-template="add-section">
+    <tr data-template="add-section">
         <td>
             <div class="btn-toolbar">
                 <div class="btn-group">
-                    <i class="btn btn-default glyphicon glyphicon-save" ng-click="addObject()" data-template="save-button"></i>
-                    <i class="btn btn-default glyphicon glyphicon-remove" ng-click="toggleAddMode()" data-template="remove-button"></i>
+                    <i class="btn btn-default glyphicon glyphicon-save" data-template="save-button"></i>
+                    <i class="btn btn-default glyphicon glyphicon-remove" data-template="remove-button"></i>
                 </div>
             </div>
         </td>
-        <td ng-repeat="column in columns" ng-switch="!column.lookup" data-template="columns">
-            <input ng-switch-default ng-model="object[column.name]" ng-disabled="column.autoincrement" class="form-control"  data-template="input"/>
-            <select  data-template="select" ng-switch-when="false" ng-options="l[column.lookup.key] as l[column.lookup.value] for l in getLookupData(column.lookup.table) <=> orderBy: column.lookup.orderBy.field:!column.lookup.orderBy.asc" ng-show="column.lookup" ng-model="object[column.name]" class="form-control"></select>
+        <td data-template="columns">
+            <input class="form-control" data-template="input"/>
+            <select data-template="select" class="form-control"></select>
         </td>
     </tr>
-    <tr ng-repeat="object in objects <=> orderBy:orderBy.field:!orderBy.asc <=> filter: filter"  data-template="objects">
+    <tr data-template="objects">
         <td>
-            <div class="btn-toolbar" ng-switch on="object.editMode"  data-template="toolbar">
-                <div class="btn-group" ng-switch-default  data-template="view-mode">
-                    <i class="btn btn-default glyphicon glyphicon-edit" ng-click="toggleEditMode(object)"  data-template="edit"></i>
-                    <i class="btn btn-default glyphicon glyphicon-trash" ng-click="deleteObject(object)" data-template="trash"></i>
+            <div class="btn-toolbar" data-template="toolbar">
+                <div class="btn-group" data-template="view-mode">
+                    <i class="btn btn-default glyphicon glyphicon-edit" data-template="edit"></i>
+                    <i class="btn btn-default glyphicon glyphicon-trash" data-template="trash"></i>
                 </div>
-                <div class="btn-group" ng-switch-when="true" data-template="edit-mode">
-                    <i class="btn btn-default glyphicon glyphicon-save" ng-click="updateObject(object);toggleEditMode(object);"  data-template="save"></i>
-                    <i class="btn btn-default glyphicon glyphicon-remove" ng-click="toggleEditMode(object)" data-template="remove"></i>
+                <div class="btn-group" data-template="edit-mode">
+                    <i class="btn btn-default glyphicon glyphicon-save" data-template="save"></i>
+                    <i class="btn btn-default glyphicon glyphicon-remove" data-template="remove"></i>
                 </div>
             </div>
         </td>
-        <td ng-repeat="column in columns" ng-switch on="object.editMode"  data-template="columns">
-            <div ng-switch-default ng-switch on="!column.lookup" ng-click="toggleEditMode(object)"  data-template="view-mode">
-                <span ng-switch-default  data-template="not-lookup"></span>
-                <span ng-switch-when="false"  data-template="lookup"></span>
+        <td data-template="columns">
+            <div data-template="view-mode">
+                <span data-template="not-lookup"></span>
+                <span data-template="lookup"></span>
             </div>
 
-            <div ng-switch-when="true" ng-switch on="!column.lookup"  data-template="edit-mode">
-                <input ng-switch-default ng-model="object[column.name]" model-change-blur ng-disabled="column.autoincrement" class="form-control"  data-template="input"/>
-                <select  data-template="select" ng-switch-when="false" ng-options="l[column.lookup.key] as l[column.lookup.value] for l in getLookupData(column.lookup.table) <=> orderBy: column.lookup.orderBy.field:!column.lookup.orderBy.asc" ng-model="object[column.name]" class="form-control"></select>
+            <div data-template="edit-mode">
+                <input class="form-control" data-template="input"/>
+                <select data-template="select" class="form-control"></select>
             </div>
         </td>
     </tr>
 </table>
-
 </body>
 </html>
