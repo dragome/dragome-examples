@@ -23,27 +23,27 @@ import com.dragome.methodlogger.MethodLoggerConfigurator;
 @DragomeConfiguratorImplementor
 public class ExamplesApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
-    private CallbackEvictorConfigurator callbackEvictorConfigurator;
-    private MethodLoggerConfigurator methodLoggerConfigurator;
+	private CallbackEvictorConfigurator callbackEvictorConfigurator;
+	private MethodLoggerConfigurator methodLoggerConfigurator;
 
-    public ExamplesApplicationConfigurator()
-    {
-	callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-	callbackEvictorConfigurator.setEnabled(true);
+	public ExamplesApplicationConfigurator()
+	{
+		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
+		callbackEvictorConfigurator.setEnabled(true);
 
-	methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName());
-	methodLoggerConfigurator.setEnabled(true);
+		methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName());
+		methodLoggerConfigurator.setEnabled(true);
 
-	init(callbackEvictorConfigurator, methodLoggerConfigurator);
-    }
+		init(callbackEvictorConfigurator, methodLoggerConfigurator);
+	}
 
-    public ExecutionHandler getExecutionHandler()
-    {
-	return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
-    }
+	public ExecutionHandler getExecutionHandler()
+	{
+		return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
+	}
 
-    public CompilerType getDefaultCompilerType()
-    {
-	return CompilerType.Standard;
-    }
+	public CompilerType getDefaultCompilerType()
+	{
+		return CompilerType.Standard;
+	}
 }
