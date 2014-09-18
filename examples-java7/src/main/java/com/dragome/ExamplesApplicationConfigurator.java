@@ -19,6 +19,6 @@ public class ExamplesApplicationConfigurator extends CallbackEvictorConfigurator
 {
 	public ExamplesApplicationConfigurator()
 	{
-		enabled= true;
+		enabled= false;
 	}
 }
