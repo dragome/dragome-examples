@@ -11,14 +11,37 @@
 package com.dragome;
 
 import com.dragome.callbackevictor.CallbackEvictorConfigurator;
-import com.dragome.commons.DragomeConfigurator;
+import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
+import com.dragome.commons.ExecutionHandler;
+import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.examples.TimerDemoPage;
+import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class ExamplesApplicationConfigurator extends CallbackEvictorConfigurator implements DragomeConfigurator
+public class ExamplesApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
+	private CallbackEvictorConfigurator callbackEvictorConfigurator;
+	private MethodLoggerConfigurator methodLoggerConfigurator;
+
 	public ExamplesApplicationConfigurator()
 	{
-		enabled= true;
+		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
+		callbackEvictorConfigurator.setEnabled(false);
+
+		methodLoggerConfigurator= new MethodLoggerConfigurator(TimerDemoPage.class.getName());
+		methodLoggerConfigurator.setEnabled(true);
+
+		init(callbackEvictorConfigurator, methodLoggerConfigurator);
+	}
+
+	public ExecutionHandler getExecutionHandler()
+	{
+		return callbackEvictorConfigurator.getExecutionHandler();
+	}
+
+	public CompilerType getDefaultCompilerType()
+	{
+		return CompilerType.Standard;
 	}
 }
