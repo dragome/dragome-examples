@@ -10,15 +10,15 @@ import com.dragome.model.interfaces.VisualTextField;
 @PageAlias(alias= "test1")
 public class Test1Page extends DragomeVisualActivity
 {
-    public void build()
-    {
-	templateHandlingStrategy.loadMainTemplate("test1");
+	public void build()
+	{
+		templateHandlingStrategy.loadMainTemplate("test1");
 
-	Person person= new Person();
-	ComponentBuilder componentBuilder= new ComponentBuilder(mainPanel);
+		Person person= new Person();
+		ComponentBuilder componentBuilder= new ComponentBuilder(mainPanel);
 
-	componentBuilder.bindTemplate("input").as(VisualTextField.class).toProperty(person::getGivenName, person::setGivenName).build();
-	componentBuilder.bindTemplate("text").as(VisualLabel.class).toProperty(person::getGivenName, person::setGivenName).build();
+		componentBuilder.bindTemplate("input").as(VisualTextField.class).toProperty(person::getGivenName, person::setGivenName).build();
+		componentBuilder.bindTemplate("text").as(VisualLabel.class).toProperty(person::getGivenName, person::setGivenName).build();
 
-    }
+	}
 }
