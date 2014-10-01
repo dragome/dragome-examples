@@ -18,9 +18,9 @@ import com.dragome.methodlogger.MethodLoggerConfigurator;
 @DragomeConfiguratorImplementor
 public class CrudGridApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
 {
-    public CrudGridApplicationConfigurator()
-    {
-	MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(CrudGrid.class.getPackage().getName());
-	init(methodLoggerConfigurator);
-    }
+	public CrudGridApplicationConfigurator()
+	{
+		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(CrudGrid.class.getPackage().getName());
+		init(methodLoggerConfigurator);
+	}
 }

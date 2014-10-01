@@ -10,6 +10,7 @@
  ******************************************************************************/
 package com.dragome.examples.crudgrid.view;
 
+import com.dragome.examples.crudgrid.model.Column;
 import com.dragome.examples.crudgrid.model.CrudGrid;
 import com.dragome.examples.crudgrid.model.Item;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
@@ -118,20 +119,29 @@ public class CrudGridComponent extends VisualPanelImpl
 
 			columnBuilder.switchWith(() -> item.isEditMode()).buildChildren(columnChildrenBuilder -> {
 
-				columnChildrenBuilder.bindTemplate("view-mode").switchDefaultCase((caseBuilder) -> {
-					return caseBuilder.as(VisualPanel.class).onClick(() -> crudGrid.toggleEditMode(item)).switchWith(() -> column.isLookup()).buildChildren(editModePanelBuilder -> {
-						editModePanelBuilder.bindTemplate("not-lookup").switchDefaultCase((lookupCaseBuilder) -> lookupCaseBuilder.as(VisualLabel.class).toProperty(item.getObject(), column.getName()).build());
-						editModePanelBuilder.bindTemplate("lookup").switchCase(() -> false, (lookupCaseBuilder) -> lookupCaseBuilder.as(VisualLabel.class).toProperty(item.getObject(), column.getName()).build());
-					}).build();
-				});
-
-				columnChildrenBuilder.bindTemplate("edit-mode").switchCase(() -> true, (caseBuilder) -> {
-					return caseBuilder.as(VisualPanel.class).switchWith(() -> !column.isLookup()).buildChildren(viewModePanelBuilder -> {
-						viewModePanelBuilder.bindTemplate("input").switchDefaultCase((lookupCaseBuilder) -> lookupCaseBuilder.as(VisualTextField.class).toProperty(item.getObject(), column.getName()).disableWhen(() -> column.isAutoincrement()).build());
-						viewModePanelBuilder.bindTemplate("select").switchCase(() -> false, (lookupCaseBuilder) -> lookupCaseBuilder.to(new VisualComboBoxImpl<>(crudGrid.getLookupData(column.getLookupEntityType()))).toProperty(item.getObject(), column.getName()).disableWhen(() -> column.isAutoincrement()).build());
-					}).build();
-				});
+				buildViewMode(item, column, columnChildrenBuilder);
+				buildEditMode(item, column, columnChildrenBuilder);
 			});
+		});
+	}
+
+	private void buildEditMode(Item item, Column column, ComponentBuilder columnChildrenBuilder)
+	{
+		columnChildrenBuilder.bindTemplate("edit-mode").switchCase(() -> true, (caseBuilder) -> {
+			return caseBuilder.as(VisualPanel.class).switchWith(() -> !column.isLookup()).buildChildren(viewModePanelBuilder -> {
+				viewModePanelBuilder.bindTemplate("input").switchDefaultCase((lookupCaseBuilder) -> lookupCaseBuilder.as(VisualTextField.class).toProperty(item.getObject(), column.getName()).disableWhen(() -> column.isAutoincrement()).build());
+				viewModePanelBuilder.bindTemplate("select").switchCase(() -> false, (lookupCaseBuilder) -> lookupCaseBuilder.to(new VisualComboBoxImpl<>(crudGrid.getLookupData(column.getLookupEntityType()))).toProperty(item.getObject(), column.getName()).disableWhen(() -> column.isAutoincrement()).build());
+			}).build();
+		});
+	}
+
+	private void buildViewMode(Item item, Column column, ComponentBuilder columnChildrenBuilder)
+	{
+		columnChildrenBuilder.bindTemplate("view-mode").switchDefaultCase((caseBuilder) -> {
+			return caseBuilder.as(VisualPanel.class).onClick(() -> crudGrid.toggleEditMode(item)).switchWith(() -> column.isLookup()).buildChildren(editModePanelBuilder -> {
+				editModePanelBuilder.bindTemplate("not-lookup").switchDefaultCase((lookupCaseBuilder) -> lookupCaseBuilder.as(VisualLabel.class).toProperty(item.getObject(), column.getName()).build());
+				editModePanelBuilder.bindTemplate("lookup").switchCase(() -> false, (lookupCaseBuilder) -> lookupCaseBuilder.as(VisualLabel.class).toProperty(item.getObject(), column.getName()).build());
+			}).build();
 		});
 	}
 }

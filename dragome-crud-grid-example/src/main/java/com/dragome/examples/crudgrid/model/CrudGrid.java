@@ -194,7 +194,7 @@ public class CrudGrid
 		{
 			public Comparable<?> get(Item obj)
 			{
-				return (Comparable) ServiceLocator.getInstance().getReflectionService().getPropertyValue(obj.getObject(), orderColumn.getName());
+				return (Comparable<?>) ServiceLocator.getInstance().getReflectionService().getPropertyValue(obj.getObject(), getOrderColumn().getName());
 			}
 		};
 	}

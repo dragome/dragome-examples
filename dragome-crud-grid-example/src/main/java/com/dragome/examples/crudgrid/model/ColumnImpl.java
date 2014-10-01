@@ -4,98 +4,99 @@ import com.dragome.forms.bindings.builders.Order;
 
 public class ColumnImpl implements Column
 {
-    private String name;
-    public boolean isAutoIncrement()
-    {
-        return autoIncrement;
-    }
+	private String name;
 
-    public void setAutoIncrement(boolean autoIncrement)
-    {
-        this.autoIncrement= autoIncrement;
-    }
+	public boolean isAutoIncrement()
+	{
+		return autoIncrement;
+	}
 
-    public void setName(String name)
-    {
-        this.name= name;
-    }
+	public void setAutoIncrement(boolean autoIncrement)
+	{
+		this.autoIncrement= autoIncrement;
+	}
 
-    public void setStyleName(String styleName)
-    {
-        this.styleName= styleName;
-    }
+	public void setName(String name)
+	{
+		this.name= name;
+	}
 
-    public void setLookup(boolean lookup)
-    {
-        this.lookup= lookup;
-    }
+	public void setStyleName(String styleName)
+	{
+		this.styleName= styleName;
+	}
 
-    private String styleName= "column-style";
-    private Order order= Order.ASC;
-    private boolean autoIncrement;
-    private boolean lookup;
-    private Class<?> lookupEntityType;
+	public void setLookup(boolean lookup)
+	{
+		this.lookup= lookup;
+	}
 
-    public void setLookupEntityType(Class<?> lookupEntityType)
-    {
-        this.lookupEntityType= lookupEntityType;
-    }
+	private String styleName= "column-style";
+	private Order order= Order.ASC;
+	private boolean autoIncrement;
+	private boolean lookup;
+	private Class<?> lookupEntityType;
 
-    public ColumnImpl()
-    {
-    }
-    
-    public ColumnImpl(String name, String styleName)
-    {
-	this.name= name;
-	this.styleName= styleName;
-    }
+	public void setLookupEntityType(Class<?> lookupEntityType)
+	{
+		this.lookupEntityType= lookupEntityType;
+	}
 
-    public ColumnImpl(String name, String styleName, boolean lookup, Class<?> lookupEntityType)
-    {
-	this(name, styleName);
-	this.lookup= lookup;
-	this.lookupEntityType= lookupEntityType;
-    }
+	public ColumnImpl()
+	{
+	}
 
-    public ColumnImpl(String name, String styleName, boolean autoIncrement)
-    {
-	this(name, styleName);
-	this.autoIncrement= autoIncrement;
-    }
+	public ColumnImpl(String name, String styleName)
+	{
+		this.name= name;
+		this.styleName= styleName;
+	}
 
-    public String getName()
-    {
-	return name;
-    }
+	public ColumnImpl(String name, String styleName, boolean lookup, Class<?> lookupEntityType)
+	{
+		this(name, styleName);
+		this.lookup= lookup;
+		this.lookupEntityType= lookupEntityType;
+	}
 
-    public String getStyleName()
-    {
-	return styleName;
-    }
+	public ColumnImpl(String name, String styleName, boolean autoIncrement)
+	{
+		this(name, styleName);
+		this.autoIncrement= autoIncrement;
+	}
 
-    public Order getOrder()
-    {
-	return order;
-    }
+	public String getName()
+	{
+		return name;
+	}
 
-    public boolean isAutoincrement()
-    {
-	return autoIncrement;
-    }
+	public String getStyleName()
+	{
+		return styleName;
+	}
 
-    public boolean isLookup()
-    {
-	return lookup;
-    }
-    
-    public void setOrder(Order order)
-    {
-        this.order= order;
-    }
+	public Order getOrder()
+	{
+		return order;
+	}
 
-    public Class<?> getLookupEntityType()
-    {
-	return lookupEntityType;
-    }
+	public boolean isAutoincrement()
+	{
+		return autoIncrement;
+	}
+
+	public boolean isLookup()
+	{
+		return lookup;
+	}
+
+	public void setOrder(Order order)
+	{
+		this.order= order;
+	}
+
+	public Class<?> getLookupEntityType()
+	{
+		return lookupEntityType;
+	}
 }

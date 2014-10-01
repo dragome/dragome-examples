@@ -20,13 +20,13 @@ import com.dragome.templates.interfaces.Template;
 @PageAlias(alias= "crudgrid")
 public class GridCrudExamplePage extends DragomeVisualActivity
 {
-    public void build()
-    {
-	Template gridTemplate= templateHandlingStrategy.loadTemplate("grid");
+	public void build()
+	{
+		Template gridTemplate= templateHandlingStrategy.loadTemplate("grid");
 
-	ComponentBuilder builder= new ComponentBuilder(mainPanel);
+		ComponentBuilder builder= new ComponentBuilder(mainPanel);
 
-	builder.bindTemplate("people").to(new CrudGridComponent(gridTemplate, People.class)).build();
-	builder.bindTemplate("place").to(new CrudGridComponent(gridTemplate, Place.class)).build();
-    }
+		builder.bindTemplate("people").to(new CrudGridComponent(gridTemplate, People.class)).build();
+		builder.bindTemplate("place").to(new CrudGridComponent(gridTemplate, Place.class)).build();
+	}
 }

@@ -17,10 +17,10 @@ import com.dragome.examples.crudgrid.model.Identifiable;
 
 public interface EntitiesProviderService
 {
-    public <T extends Identifiable> List<T> getAll(Class<T> entityType);
-    public List<Column> getColumnsFor(Class<?> entityType);
-    public <T extends Identifiable> void saveAll(List<T> list);
-    public void delete(Identifiable object);
-    public Identifiable add(Identifiable object);
-    public void update(Identifiable object);
+	public <T extends Identifiable> List<T> getAll(Class<T> entityType);
+	public List<Column> getColumnsFor(Class<?> entityType);
+	public <T extends Identifiable> void saveAll(List<T> list);
+	public void delete(Identifiable object);
+	public Identifiable add(Identifiable object);
+	public void update(Identifiable object);
 }

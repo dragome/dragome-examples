@@ -2,32 +2,31 @@ package com.dragome.examples.crudgrid.model;
 
 import com.dragome.forms.bindings.builders.Order;
 
-
 public interface Column
 {
-    String getName();
+	String getName();
 
-    String getStyleName();
+	String getStyleName();
 
-    Order getOrder();
-    
-    boolean isAutoincrement();
+	Order getOrder();
 
-    boolean isLookup();
+	boolean isAutoincrement();
 
-    void setOrder(Order order);
+	boolean isLookup();
 
-    Class<?> getLookupEntityType();
+	void setOrder(Order order);
 
-    public abstract void setLookupEntityType(Class<?> lookupEntityType);
+	Class<?> getLookupEntityType();
 
-    public abstract void setLookup(boolean lookup);
+	public abstract void setLookupEntityType(Class<?> lookupEntityType);
 
-    public abstract void setStyleName(String styleName);
+	public abstract void setLookup(boolean lookup);
 
-    public abstract void setName(String name);
+	public abstract void setStyleName(String styleName);
 
-    public abstract void setAutoIncrement(boolean autoIncrement);
+	public abstract void setName(String name);
 
-    public abstract boolean isAutoIncrement();
+	public abstract void setAutoIncrement(boolean autoIncrement);
+
+	public abstract boolean isAutoIncrement();
 }
