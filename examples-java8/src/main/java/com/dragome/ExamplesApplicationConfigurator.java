@@ -18,6 +18,7 @@ import com.dragome.commons.compiler.annotations.CompilerType;
 import com.dragome.examples.ContinuationExample;
 import com.dragome.examples.TimerDemoPage;
 import com.dragome.examples.model.Person;
+import com.dragome.examples.tutorial.RepeatWithFilter;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
@@ -31,7 +32,7 @@ public class ExamplesApplicationConfigurator extends ChainedInstrumentationDrago
 		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
 		callbackEvictorConfigurator.setEnabled(true);
 
-		methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName());
+		methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName(), RepeatWithFilter.class.getPackage().getName());
 		methodLoggerConfigurator.setEnabled(true);
 
 		init(callbackEvictorConfigurator, methodLoggerConfigurator);
@@ -39,7 +40,7 @@ public class ExamplesApplicationConfigurator extends ChainedInstrumentationDrago
 
 	public ExecutionHandler getExecutionHandler()
 	{
-		return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
+		return callbackEvictorConfigurator.getExecutionHandler();
 	}
 
 	public CompilerType getDefaultCompilerType()
