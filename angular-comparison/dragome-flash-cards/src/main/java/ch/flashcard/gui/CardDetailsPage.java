@@ -80,7 +80,7 @@ public class CardDetailsPage extends DragomeVisualActivity
 		{
 			public void clickPerformed(VisualComponent aVisualComponent)
 			{
-				openPage(new CardDeckPage());
+				openActivity(new CardDeckPage());
 			}
 		});
 
