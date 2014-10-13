@@ -11,7 +11,7 @@
 package com.dragome.examples.tree;
 
 import com.dragome.model.VisualPanelImpl;
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.GuiaServiceLocator;
 import com.dragome.templates.TemplateLayout;
 import com.dragome.templates.interfaces.Template;
 
@@ -39,7 +39,7 @@ public class VisualTreeImpl extends VisualPanelImpl
 	super(aName);
 	this.setOriginalTemplate(rootTemplate);
 	this.rootNode= rootNode;
-	Template clone= ServiceLocator.getInstance().getTemplateHandler().clone(rootTemplate);
+	Template clone= GuiaServiceLocator.getInstance().getTemplateHandler().clone(rootTemplate);
 
 	setLayout(new TemplateLayout(clone));
     }

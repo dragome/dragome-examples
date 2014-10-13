@@ -21,7 +21,7 @@ import com.dragome.render.canvas.interfaces.Canvas;
 import com.dragome.render.html.components.MergeableElement;
 import com.dragome.render.interfaces.ComponentRenderer;
 import com.dragome.render.interfaces.View;
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.GuiaServiceLocator;
 import com.dragome.templates.TemplateLayout;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
@@ -34,7 +34,7 @@ public class HTMLTreeRenderer implements ComponentRenderer<Element, VisualTreeIm
 
 	public Canvas<Element> render(final VisualTreeImpl visualTree)
 	{
-		Canvas<Element> canvas= ServiceLocator.getInstance().getTemplateManager().getCanvasFactory().createCanvas();
+		Canvas<Element> canvas= GuiaServiceLocator.getInstance().getTemplateManager().getCanvasFactory().createCanvas();
 
 		canvas.setContent(new MergeableElement()
 		{

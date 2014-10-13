@@ -21,7 +21,7 @@ import com.dragome.model.interfaces.VisualButton;
 import com.dragome.model.interfaces.VisualLabel;
 import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.interfaces.VisualTextField;
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.GuiaServiceLocator;
 import com.dragome.templates.TemplateLayout;
 import com.dragome.templates.interfaces.Template;
 
@@ -34,7 +34,7 @@ public class CrudGridComponent extends VisualPanelImpl
 	public CrudGridComponent(Template template, Class<?> entityType)
 	{
 		this.entityType= entityType;
-		Template clonedTemplate= ServiceLocator.getInstance().getTemplateHandler().clone(template);
+		Template clonedTemplate= GuiaServiceLocator.getInstance().getTemplateHandler().clone(template);
 		initLayout(new TemplateLayout(clonedTemplate));
 	}
 

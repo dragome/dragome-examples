@@ -12,6 +12,7 @@ import com.dragome.model.interfaces.VisualButton;
 import com.dragome.model.interfaces.VisualLabel;
 import com.dragome.model.interfaces.VisualTextField;
 import com.dragome.render.interfaces.TemplateHandler;
+import com.dragome.services.GuiaServiceLocator;
 import com.dragome.services.ServiceLocator;
 import com.dragome.templates.interfaces.Template;
 
@@ -33,7 +34,7 @@ public class ContinuationExample extends DragomeVisualActivity
 	public void build()
 	{
 		final ExecutionHandler executionHandler= ServiceLocator.getInstance().getConfigurator().getExecutionHandler();
-		TemplateHandler templateHandler= ServiceLocator.getInstance().getTemplateHandler();
+		TemplateHandler templateHandler= GuiaServiceLocator.getInstance().getTemplateHandler();
 
 		Template operationPanelTemplate= mainTemplate.getChild("operation-panel");
 		templateHandler.makeInvisible(operationPanelTemplate);

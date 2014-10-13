@@ -25,7 +25,7 @@ import com.dragome.model.interfaces.VisualPanel;
 import com.dragome.model.listeners.ClickListener;
 import com.dragome.render.DefaultView;
 import com.dragome.render.interfaces.TemplateHandler;
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.GuiaServiceLocator;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
 
@@ -52,7 +52,7 @@ public class TreeNodeView extends DefaultView<TreeNode>
 			List<Template> templates2= templates;
 			final Template template= templates2.get(0);
 
-			TemplateHandler templateHandler= ServiceLocator.getInstance().getTemplateHandler();
+			TemplateHandler templateHandler= GuiaServiceLocator.getInstance().getTemplateHandler();
 
 			templateHandler.makeInvisible(template);
 			if ((Boolean) evt.getOldValue())
