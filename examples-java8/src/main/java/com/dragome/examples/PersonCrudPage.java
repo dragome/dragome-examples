@@ -53,7 +53,7 @@ public class PersonCrudPage extends DragomeVisualActivity
 
 		rowPanel.addChild(new VisualButtonImpl("delete-button", v -> {
 			persons.remove(person);
-			rowPanel.getParent().removeChild(rowPanel);
+			rowPanel.getParent().removeChild(rowPanel); 
 		}));
 
 		ModelBinder<Person> modelBinder= new ModelBinder<Person>(person, rowPanel);
