@@ -13,21 +13,21 @@ package com.dragome.examples;
 import java.util.List;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.service.PersonService;
-import com.dragome.model.VisualButtonImpl;
-import com.dragome.model.VisualLabelImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.VisualTextFieldImpl;
-import com.dragome.model.interfaces.VisualComponent;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.listeners.ClickListener;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualButtonImpl;
+import com.dragome.guia.components.VisualLabelImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.VisualTextFieldImpl;
+import com.dragome.guia.components.interfaces.VisualComponent;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.listeners.ClickListener;
 import com.dragome.render.ItemProcessorImpl;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
 
 @PageAlias(alias= "persons2")
-public class PersonListPage extends DragomeVisualActivity
+public class PersonListPage extends GuiaVisualActivity
 {
     public void build()
     {

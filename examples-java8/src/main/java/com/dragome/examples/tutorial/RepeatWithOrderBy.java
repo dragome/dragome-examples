@@ -3,16 +3,16 @@ package com.dragome.examples.tutorial;
 import java.util.Arrays;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.ObservableList;
 import com.dragome.forms.bindings.builders.Order;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualPanel;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualPanel;
 
 @PageAlias(alias= "repeat-with-order-by")
-public class RepeatWithOrderBy extends DragomeVisualActivity
+public class RepeatWithOrderBy extends GuiaVisualActivity
 {
 	protected Order order= Order.ASC;
 

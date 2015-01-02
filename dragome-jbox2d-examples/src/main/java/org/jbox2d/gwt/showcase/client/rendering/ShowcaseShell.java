@@ -1,6 +1,6 @@
 package org.jbox2d.gwt.showcase.client.rendering;
 
-import com.dragome.model.VisualPanelImpl;
+import com.dragome.guia.components.VisualPanelImpl;
 
 public class ShowcaseShell extends VisualPanelImpl
 {

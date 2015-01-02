@@ -18,14 +18,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.dragome.examples.tree.TreeNode;
-import com.dragome.model.VisualLabelImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.interfaces.VisualComponent;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.listeners.ClickListener;
+import com.dragome.guia.GuiaServiceLocator;
+import com.dragome.guia.components.VisualLabelImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.interfaces.VisualComponent;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.listeners.ClickListener;
 import com.dragome.render.DefaultView;
 import com.dragome.render.interfaces.TemplateHandler;
-import com.dragome.services.GuiaServiceLocator;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
 

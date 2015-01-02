@@ -10,13 +10,13 @@
  ******************************************************************************/
 package com.dragome.examples.todo;
 
-import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
+import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class TodoMVCApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
+public class TodoMVCApplicationConfigurator extends DomHandlerApplicationConfigurator
 {
 	public TodoMVCApplicationConfigurator()
 	{

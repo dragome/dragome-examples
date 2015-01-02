@@ -10,27 +10,29 @@
  ******************************************************************************/
 package com.dragome.examples.todo.view;
 
-import static com.dragome.model.listeners.KeyListener.KEY_ENTER;
-import static com.dragome.model.listeners.KeyListener.KEY_ESC;
 
 import java.util.stream.Stream;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.examples.todo.model.TodoManager;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.LocalStorage;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualCheckbox;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualLink;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.interfaces.VisualTextField;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualCheckbox;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualLink;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
 
+import static com.dragome.guia.listeners.KeyListener.KEY_ENTER;
+import static com.dragome.guia.listeners.KeyListener.KEY_ESC;
+
+
 @PageAlias(alias= "todo-mvc")
-public class TodosPage extends DragomeVisualActivity
+public class TodosPage extends GuiaVisualActivity
 {
 	private TodoManager todoManager;
 
@@ -109,8 +111,8 @@ public class TodosPage extends DragomeVisualActivity
 		builder.bindTemplate("todo-input")
     		.as(VisualTextField.class)
     		.toProperty(todo::getTitle, todo::setTitle)
-    		.onKeyUp((v, c) -> todoManager.doneEditing(todo), KEY_ESC, KEY_ENTER)
-    		.onBlur(v -> todoManager.doneEditing(todo))
+    		.onKeyUp((v, c) -> todoManager.doneEditing(todo, c== KEY_ESC), KEY_ESC, KEY_ENTER)
+    		.onBlur(v -> todoManager.doneEditing(todo, false))
     		.build();
 		
 		builder.bindTemplate("title")

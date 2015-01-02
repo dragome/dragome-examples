@@ -17,20 +17,20 @@ import java.util.List;
 import com.dragome.annotations.PageAlias;
 import com.dragome.commons.compiler.annotations.CompilerType;
 import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.model.Person;
 import com.dragome.examples.service.PersonService;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.ObservableList;
-import com.dragome.model.VisualComboBoxImpl;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.interfaces.VisualTextField;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualComboBoxImpl;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.components.interfaces.VisualTextField;
  
 @DragomeCompilerSettings(CompilerType.Strict)
 @PageAlias(alias= "crud2")
-public class PersonCrudUsingBuilders extends DragomeVisualActivity
+public class PersonCrudUsingBuilders extends GuiaVisualActivity
 {
 	List<Person> persons= new ObservableList<Person>(new ArrayList<Person>());
 

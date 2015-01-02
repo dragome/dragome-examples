@@ -1,14 +1,14 @@
 package com.dragome.examples;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.model.Person;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualTextField;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualTextField;
 
 @PageAlias(alias= "test1")
-public class Test1Page extends DragomeVisualActivity
+public class Test1Page extends GuiaVisualActivity
 {
 	public void build()
 	{

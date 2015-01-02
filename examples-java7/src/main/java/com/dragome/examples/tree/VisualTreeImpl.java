@@ -10,8 +10,8 @@
  ******************************************************************************/
 package com.dragome.examples.tree;
 
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.services.GuiaServiceLocator;
+import com.dragome.guia.GuiaServiceLocator;
+import com.dragome.guia.components.VisualPanelImpl;
 import com.dragome.templates.TemplateLayout;
 import com.dragome.templates.interfaces.Template;
 

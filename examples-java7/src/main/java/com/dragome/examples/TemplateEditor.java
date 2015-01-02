@@ -15,28 +15,28 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.client.form.binding.FormBinder;
 import com.dragome.forms.bindings.client.value.MutableValueModel;
 import com.dragome.forms.bindings.client.value.ValueHolder;
-import com.dragome.model.VisualButtonImpl;
-import com.dragome.model.VisualLabelImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.VisualTextAreaImpl;
-import com.dragome.model.VisualTextFieldImpl;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualButtonImpl;
+import com.dragome.guia.components.VisualLabelImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.VisualTextAreaImpl;
+import com.dragome.guia.components.VisualTextFieldImpl;
+import com.dragome.guia.components.interfaces.VisualComponent;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.components.interfaces.VisualTextArea;
+import com.dragome.guia.components.interfaces.VisualTextField;
+import com.dragome.guia.listeners.ClickListener;
 import com.dragome.model.interfaces.ValueChangeEvent;
 import com.dragome.model.interfaces.ValueChangeHandler;
-import com.dragome.model.interfaces.VisualComponent;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.interfaces.VisualTextArea;
-import com.dragome.model.interfaces.VisualTextField;
-import com.dragome.model.listeners.ClickListener;
 import com.dragome.render.ItemProcessorImpl;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
 
 @PageAlias(alias= "template-editor")
-public class TemplateEditor extends DragomeVisualActivity
+public class TemplateEditor extends GuiaVisualActivity
 {
 	protected List<MutableValueModel<String>> replacements= new ArrayList<>();
 	protected VisualTextArea<String> templateField;

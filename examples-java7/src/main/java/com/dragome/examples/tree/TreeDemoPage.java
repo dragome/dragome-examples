@@ -14,10 +14,10 @@ import java.lang.reflect.Type;
 import java.util.Map;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.tree.service.FileSystemService;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.interfaces.VisualPanel;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.render.html.components.HTMLComponentRenderer;
 import com.dragome.services.ServiceLocator;
 import com.dragome.services.interfaces.SerializationService;
@@ -32,7 +32,7 @@ import flexjson.transformer.AbstractTransformer;
 import flexjson.transformer.Transformer;
 
 @PageAlias(alias= "tree-sync-demo")
-public class TreeDemoPage extends DragomeVisualActivity
+public class TreeDemoPage extends GuiaVisualActivity
 {
 	private static boolean ready;
 

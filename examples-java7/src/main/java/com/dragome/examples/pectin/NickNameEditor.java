@@ -12,8 +12,8 @@ package com.dragome.examples.pectin;
 
 import java.util.Arrays;
 
-import com.dragome.model.VisualComboBoxImpl;
-import com.dragome.model.VisualTextFieldImpl;
+import com.dragome.guia.components.VisualComboBoxImpl;
+import com.dragome.guia.components.VisualTextFieldImpl;
 import com.dragome.model.interfaces.HasValue;
 
 public class NickNameEditor extends VisualComboBoxImpl<String>

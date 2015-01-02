@@ -16,20 +16,20 @@ import ch.flashcard.persistence.CardDeckEntity;
 import ch.flashcard.persistence.CardEntity;
 import ch.flashcard.service.CardDeckService;
 
-import com.dragome.debugging.execution.DragomeVisualActivity;
-import com.dragome.model.VisualButtonImpl;
-import com.dragome.model.VisualLabelImpl;
-import com.dragome.model.VisualLinkImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualComponent;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualLink;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.listeners.ClickListener;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualButtonImpl;
+import com.dragome.guia.components.VisualLabelImpl;
+import com.dragome.guia.components.VisualLinkImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualComponent;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualLink;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.listeners.ClickListener;
 import com.dragome.templates.interfaces.Template;
 
-public class CardDetailsPage extends DragomeVisualActivity
+public class CardDetailsPage extends GuiaVisualActivity
 {
 	protected CardDeckEntity cardDeckEntity;
 	protected List<CardDeckEntity> cardDecks;

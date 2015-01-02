@@ -8,10 +8,9 @@ import org.jbox2d.common.Vec2;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.dragome.examples.canvas.delegate.CanvasRenderingContext2D;
-import com.dragome.examples.canvas.delegate.ElementTransformer;
-import com.dragome.examples.canvas.delegate.HTMLCanvasElement;
-import com.dragome.examples.canvas.impl.CanvasElement;
+import com.dragome.enhancers.jsdelegate.JsDelegateFactory;
+import com.dragome.html.dom.html5canvas.CanvasRenderingContext2D;
+import com.dragome.html.dom.html5canvas.HTMLCanvasElement;
 import com.dragome.services.ServiceLocator;
 
 public class CanvasDebugDraw extends DebugDraw
@@ -34,8 +33,9 @@ public class CanvasDebugDraw extends DebugDraw
 		viewportTransform.setYFlip(true);
 		viewportTransform.setExtents(canvasWidth / 2, canvasHeight / 2);
 		viewportTransform.setCenter(canvasWidth / 2, canvasHeight / 2);
-		canvas= new CanvasElement(element);
+//		canvas= new CanvasElement(element);
 		//		canvas= ElementTransformer.transformElementTo(element, HTMLCanvasElement.class);
+		canvas= JsDelegateFactory.createFromNode(element, HTMLCanvasElement.class);
 
 		if (canvas == null)
 		{

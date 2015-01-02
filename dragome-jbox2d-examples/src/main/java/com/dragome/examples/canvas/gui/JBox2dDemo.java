@@ -2,19 +2,20 @@ package com.dragome.examples.canvas.gui;
 
 import org.jbox2d.gwt.showcase.client.example.BlobTest4;
 import org.jbox2d.gwt.showcase.client.example.ExampleList;
+import org.jbox2d.gwt.showcase.client.example.Web;
 import org.jbox2d.gwt.showcase.client.framework.BaseExample;
 import org.jbox2d.gwt.showcase.client.rendering.ExampleView;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
-import com.dragome.model.SimpleRenderer;
-import com.dragome.model.VisualComboBoxImpl;
-import com.dragome.model.interfaces.VisualComboBox;
-import com.dragome.model.interfaces.VisualLabel;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.SimpleRenderer;
+import com.dragome.guia.components.VisualComboBoxImpl;
+import com.dragome.guia.components.interfaces.VisualComboBox;
+import com.dragome.guia.components.interfaces.VisualLabel;
 
 @PageAlias(alias= "demo")
-public class JBox2dDemo extends DragomeVisualActivity
+public class JBox2dDemo extends GuiaVisualActivity
 {
 	public void build()
 	{
@@ -50,7 +51,8 @@ public class JBox2dDemo extends DragomeVisualActivity
 		}).build();
 		
 
-		BlobTest4 example= new BlobTest4();
+		BaseExample example= new BlobTest4();
+		example= new Web();
 		exampleView.onStartExample(example);
 		label.setValue(example.getInstructions().toString());
 	}

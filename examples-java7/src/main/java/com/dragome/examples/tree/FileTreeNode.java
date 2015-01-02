@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dragome.examples.tree.service.serverside.FileSystemServiceImpl;
-import com.dragome.model.DefaultEventProducer;
+import com.dragome.guia.components.DefaultEventProducer;
 
 public class FileTreeNode extends DefaultEventProducer implements TreeNode
 {

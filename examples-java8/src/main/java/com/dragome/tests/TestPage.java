@@ -11,10 +11,10 @@
 package com.dragome.tests;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
+import com.dragome.guia.GuiaVisualActivity;
 
 @PageAlias(alias="tests")
-public class TestPage extends DragomeVisualActivity
+public class TestPage extends GuiaVisualActivity
 {
 	public void build()
 	{

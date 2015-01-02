@@ -15,20 +15,20 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.examples.model.Person;
 import com.dragome.examples.service.PersonService;
 import com.dragome.forms.bindings.builders.ModelBinder;
-import com.dragome.model.VisualButtonImpl;
-import com.dragome.model.VisualComboBoxImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.VisualTextFieldImpl;
-import com.dragome.model.interfaces.VisualPanel;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualButtonImpl;
+import com.dragome.guia.components.VisualComboBoxImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.VisualTextFieldImpl;
+import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
 
 @PageAlias(alias= "crud1")
-public class PersonCrudPage extends DragomeVisualActivity
+public class PersonCrudPage extends GuiaVisualActivity
 {
 	PersonService personService= serviceFactory.createSyncService(PersonService.class);
 	List<Person> persons= new ArrayList<Person>();

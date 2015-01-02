@@ -74,8 +74,14 @@ public class TodoManager
 		update();
 	}
 
-	public void doneEditing(Todo todo)
+	public void doneEditing(Todo todo, boolean cancel)
 	{
+		if (cancel)
+		{
+			todo.setCompleted(originalTodo.isCompleted());
+			todo.setTitle(originalTodo.getTitle());
+		}
+
 		setEditedTodo(null);
 		todo.setTitle(todo.getTitle().trim());
 
@@ -145,7 +151,6 @@ public class TodoManager
 	public void revertEditing(Todo todo)
 	{
 		getTodos().set(getTodos().indexOf(todo), originalTodo);
-		doneEditing(originalTodo);
 	}
 
 	public void setAllChecked(boolean allChecked)

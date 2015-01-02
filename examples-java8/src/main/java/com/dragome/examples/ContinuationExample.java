@@ -4,20 +4,20 @@ import java.util.Arrays;
 
 import com.dragome.annotations.PageAlias;
 import com.dragome.commons.ExecutionHandler;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
-import com.dragome.model.VisualComboBoxImpl;
-import com.dragome.model.VisualPanelImpl;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualTextField;
+import com.dragome.guia.GuiaServiceLocator;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.VisualComboBoxImpl;
+import com.dragome.guia.components.VisualPanelImpl;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.render.interfaces.TemplateHandler;
-import com.dragome.services.GuiaServiceLocator;
 import com.dragome.services.ServiceLocator;
 import com.dragome.templates.interfaces.Template;
 
 @PageAlias(alias= "continuation1")
-public class ContinuationExample extends DragomeVisualActivity
+public class ContinuationExample extends GuiaVisualActivity
 {
 	protected float result= 0f;
 

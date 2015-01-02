@@ -11,15 +11,15 @@
 package com.dragome;
 
 import com.dragome.callbackevictor.CallbackEvictorConfigurator;
-import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.ExecutionHandler;
 import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.examples.TimerDemoPage;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 
 @DragomeConfiguratorImplementor
-public class ExamplesApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
+public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfigurator
 {
 	private CallbackEvictorConfigurator callbackEvictorConfigurator;
 	private MethodLoggerConfigurator methodLoggerConfigurator;

@@ -3,15 +3,15 @@ package com.dragome.examples.tutorial;
 import java.util.Arrays;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.ObservableList;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.interfaces.VisualPanel;
-import com.dragome.model.interfaces.VisualTextField;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.components.interfaces.VisualPanel;
+import com.dragome.guia.components.interfaces.VisualTextField;
 
 @PageAlias(alias= "repeat-with-filter")
-public class RepeatWithFilter extends DragomeVisualActivity
+public class RepeatWithFilter extends GuiaVisualActivity
 {
 	String filterText= "";
 

@@ -1,19 +1,19 @@
 package com.dragome.examples;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.client.value.ValueSource;
+import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.guia.components.interfaces.VisualBounds;
+import com.dragome.guia.components.interfaces.VisualButton;
+import com.dragome.guia.components.interfaces.VisualComponent;
+import com.dragome.guia.components.interfaces.VisualImage;
+import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.guia.listeners.ClickListener;
 import com.dragome.html.dom.Timer;
-import com.dragome.model.interfaces.VisualBounds;
-import com.dragome.model.interfaces.VisualButton;
-import com.dragome.model.interfaces.VisualComponent;
-import com.dragome.model.interfaces.VisualImage;
-import com.dragome.model.interfaces.VisualLabel;
-import com.dragome.model.listeners.ClickListener;
 
 @PageAlias(alias= "timer-demo")
-public class TimerDemoPage extends DragomeVisualActivity
+public class TimerDemoPage extends GuiaVisualActivity
 {
 	int dx= 1;
 	int dy= 1;

@@ -1,3 +1,5 @@
+package com.dragome.examples.canvas;
+
 /*******************************************************************************
  * Copyright (c) 2011-2014 Fernando Petrola
  * 
@@ -8,42 +10,41 @@
  * which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/gpl.html
  ******************************************************************************/
-package com.dragome.examples.canvas;
 
-import com.dragome.callbackevictor.CallbackEvictorConfigurator;
-import com.dragome.commons.ChainedInstrumentationDragomeConfigurator;
+import java.io.File;
+
 import com.dragome.commons.DragomeConfiguratorImplementor;
-import com.dragome.commons.ExecutionHandler;
-import com.dragome.commons.compiler.annotations.CompilerType;
+import com.dragome.commons.compiler.CompilerMode;
+import com.dragome.config.DomHandlerApplicationConfigurator;
+import com.dragome.helpers.serverside.DefaultClasspathFilter;
 
 @DragomeConfiguratorImplementor
-public class ExamplesApplicationConfigurator extends ChainedInstrumentationDragomeConfigurator
+public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfigurator
 {
-	private CallbackEvictorConfigurator callbackEvictorConfigurator;
-
 	public ExamplesApplicationConfigurator()
 	{
-		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-		callbackEvictorConfigurator.setEnabled(false);
+		System.setProperty("dragome-compile-mode", CompilerMode.Debug.toString());
 
-		init(callbackEvictorConfigurator);
+		setClasspathFilter(new DefaultClasspathFilter()
+		{
+			public boolean accept(File pathname)
+			{
+				boolean accept= super.accept(pathname);
+
+				String string= pathname.toString();
+
+				accept&= !string.contains("java/util/concurrent");
+				accept&= !string.contains("java/util/stream");
+				accept&= !string.contains("java/util/function");
+				accept&= !string.contains("java/sql");
+//				accept&= !string.contains("org/w3c/dom/html");
+				//				accept&= !string.contains("java/lang/reflect");
+				accept&= !string.contains("java/org/junit");
+				accept&= !string.contains("junit");
+
+				return accept;
+			}
+
+		});
 	}
-
-	public ExecutionHandler getExecutionHandler()
-	{
-		return callbackEvictorConfigurator.isEnabled() ? callbackEvictorConfigurator.getExecutionHandler() : super.getExecutionHandler();
-	}
-
-	public CompilerType getDefaultCompilerType()
-	{
-		return CompilerType.Standard;
-	}
-	
-	public boolean filterClassPath(String classpathEntry)
-	{
-		boolean include= super.filterClassPath(classpathEntry) ;
-
-		return include;
-	}
-
 }

@@ -6,12 +6,12 @@ import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventListener;
 
 import com.dragome.annotations.PageAlias;
-import com.dragome.debugging.execution.DragomeVisualActivity;
-import com.dragome.model.EventDispatcherImpl;
+import com.dragome.dispatcher.EventDispatcherImpl;
+import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.services.ServiceLocator;
 
 @PageAlias(alias= "test-dom1")
-public class TestDom1 extends DragomeVisualActivity
+public class TestDom1 extends GuiaVisualActivity
 {
 	private int delta= 0;
 
