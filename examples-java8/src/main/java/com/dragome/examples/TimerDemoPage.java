@@ -26,7 +26,7 @@ public class TimerDemoPage extends GuiaVisualActivity
 		componentBuilder.bindTemplate("pauseButton").as(VisualButton.class).onClick(() -> setSpeed(speed - 3)).build();
 		componentBuilder.bindTemplate("speed").as(VisualLabel.class).to(this::getSpeed).build();
 		VisualImage image= componentBuilder.bindTemplate("ball-image").as(VisualImage.class).build();
-		timer.setInterval(() -> moveComponent(image), 10);
+		moveComponent(image);
 	}
 
 	public void moveComponent(VisualComponent component)
@@ -34,6 +34,7 @@ public class TimerDemoPage extends GuiaVisualActivity
 		VisualBounds bounds= component.getStyle().getBounds();
 		bounds.setX(bounds.getX() + (dx*= bounds.getX() > 400 - speed || bounds.getX() < -3 + speed ? -1 : 1) * speed);
 		bounds.setY(bounds.getY() + (dy*= bounds.getY() > 300 - speed || bounds.getY() < -3 + speed ? -1 : 1) * speed);
+		timer.setTimeout(() -> moveComponent(component), 10);
 	}
 
 	public int getSpeed()
