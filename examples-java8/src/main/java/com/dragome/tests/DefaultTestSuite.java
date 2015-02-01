@@ -12,6 +12,7 @@ public class DefaultTestSuite extends TestSuite
 	static public Test suite()
 	{
 		TestSuite suite= new TestSuite();
+		suite.addTestSuite(StaticMembersTests.class);
 		suite.addTestSuite(ReflectionAPITests.class);
 		suite.addTestSuite(LambdaTest.class);
 		suite.addTestSuite(TestDefaultMethods.class);
