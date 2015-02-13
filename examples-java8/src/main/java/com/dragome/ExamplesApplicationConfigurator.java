@@ -30,7 +30,7 @@ public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfig
 	public ExamplesApplicationConfigurator()
 	{
 		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-		callbackEvictorConfigurator.setEnabled(true);
+		callbackEvictorConfigurator.setEnabled(false);
 
 		methodLoggerConfigurator= new MethodLoggerConfigurator(Person.class.getName(), TimerDemoPage.class.getName(), ContinuationExample.class.getName(), RepeatWithFilter.class.getPackage().getName());
 		methodLoggerConfigurator.setEnabled(true);
