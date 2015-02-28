@@ -6,7 +6,7 @@
 
   <servlet>
     <servlet-name>DragomeResourcesServlet</servlet-name>
-    <servlet-class>com.dragome.serverside.servlets.DragomeResourcesServlet</servlet-class>
+    <servlet-class>com.dragome.web.serverside.servlets.DragomeResourcesServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -17,7 +17,7 @@
 
   <servlet>
     <servlet-name>ClassTransformerInvokerServlet</servlet-name>
-    <servlet-class>com.dragome.serverside.servlets.ClassTransformerInvokerServlet</servlet-class>
+    <servlet-class>com.dragome.web.serverside.servlets.ClassTransformerInvokerServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -28,7 +28,7 @@
 
   <servlet>
     <servlet-name>CompilerServlet</servlet-name>
-    <servlet-class>com.dragome.serverside.servlets.CompilerServlet</servlet-class>
+    <servlet-class>com.dragome.web.serverside.servlets.CompilerServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -39,7 +39,7 @@
 
   <servlet>
     <servlet-name>PageAliasesServlet</servlet-name>
-    <servlet-class>com.dragome.serverside.servlets.PageAliasesServlet</servlet-class>
+    <servlet-class>com.dragome.web.serverside.servlets.PageAliasesServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
 
@@ -50,7 +50,7 @@
 
   <filter>
     <filter-name>DragomeIEFilter</filter-name>
-    <filter-class>com.dragome.serverside.servlets.DragomeIEFilter</filter-class>
+    <filter-class>com.dragome.web.serverside.servlets.DragomeIEFilter</filter-class>
   </filter>
 
   <filter-mapping>
@@ -61,7 +61,7 @@
   <servlet>
     <description>DragomeWebSocketFilter</description>
     <servlet-name>DragomeWebSocketFilter</servlet-name>
-    <servlet-class>com.dragome.serverside.servlets.DragomeWebSocketFilter</servlet-class>
+    <servlet-class>com.dragome.web.serverside.servlets.DragomeWebSocketFilter</servlet-class>
     <init-param>
       <param-name>org.atmosphere.cpr.packages</param-name>
       <param-value>com.dragome.serverside.debugging.websocket</param-value>
@@ -88,7 +88,7 @@
 
   <filter>
     <filter-name>DragomeWro4jFilter</filter-name>
-    <filter-class>com.dragome.serverside.servlets.DragomeWro4jFilter</filter-class>
+    <filter-class>com.dragome.web.serverside.servlets.DragomeWro4jFilter</filter-class>
   </filter>
 
   <filter-mapping>

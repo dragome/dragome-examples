@@ -15,7 +15,6 @@ import java.util.List;
 import ch.flashcard.persistence.CardDeckEntity;
 import ch.flashcard.service.CardDeckService;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.VisualLabelImpl;
 import com.dragome.guia.components.VisualPanelImpl;
@@ -25,6 +24,7 @@ import com.dragome.guia.listeners.ClickListener;
 import com.dragome.render.ItemProcessorImpl;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "deck")
 public class CardDeckPage extends GuiaVisualActivity
