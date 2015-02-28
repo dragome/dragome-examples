@@ -13,7 +13,6 @@ package com.dragome.examples.pectin;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.builders.ModelBinder;
 import com.dragome.forms.bindings.client.list.ArrayListModel;
 import com.dragome.guia.GuiaVisualActivity;
@@ -24,6 +23,7 @@ import com.dragome.guia.components.interfaces.VisualComponent;
 import com.dragome.guia.components.interfaces.VisualListBox;
 import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.guia.listeners.ClickListener;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "binding-demo")
 public class BindingDemo extends GuiaVisualActivity

@@ -12,7 +12,6 @@ package com.dragome.examples;
 
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.examples.service.PersonService;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.VisualButtonImpl;
@@ -25,6 +24,7 @@ import com.dragome.guia.listeners.ClickListener;
 import com.dragome.render.ItemProcessorImpl;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "persons2")
 public class PersonListPage extends GuiaVisualActivity

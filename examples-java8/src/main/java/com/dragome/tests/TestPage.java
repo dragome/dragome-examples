@@ -10,8 +10,8 @@
  ******************************************************************************/
 package com.dragome.tests;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.guia.GuiaVisualActivity;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias="tests")
 public class TestPage extends GuiaVisualActivity

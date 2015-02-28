@@ -1,10 +1,10 @@
 package com.dragome.examples.tutorial;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.interfaces.VisualLabel;
 import com.dragome.guia.components.interfaces.VisualTextField;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "simple-binding")
 public class SimpleBinding extends GuiaVisualActivity

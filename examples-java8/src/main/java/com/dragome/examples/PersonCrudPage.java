@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.examples.model.Person;
 import com.dragome.examples.service.PersonService;
 import com.dragome.forms.bindings.builders.ModelBinder;
@@ -26,6 +25,7 @@ import com.dragome.guia.components.VisualTextFieldImpl;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "crud1")
 public class PersonCrudPage extends GuiaVisualActivity

@@ -6,13 +6,13 @@ import org.jbox2d.gwt.showcase.client.example.Web;
 import org.jbox2d.gwt.showcase.client.framework.BaseExample;
 import org.jbox2d.gwt.showcase.client.rendering.ExampleView;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.SimpleRenderer;
 import com.dragome.guia.components.VisualComboBoxImpl;
 import com.dragome.guia.components.interfaces.VisualComboBox;
 import com.dragome.guia.components.interfaces.VisualLabel;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "demo")
 public class JBox2dDemo extends GuiaVisualActivity

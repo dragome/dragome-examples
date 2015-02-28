@@ -11,9 +11,11 @@
 package com.dragome.examples.todo.view;
 
 
+import static com.dragome.guia.listeners.KeyListener.KEY_ENTER;
+import static com.dragome.guia.listeners.KeyListener.KEY_ESC;
+
 import java.util.stream.Stream;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.examples.todo.model.TodoManager;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
@@ -26,9 +28,7 @@ import com.dragome.guia.components.interfaces.VisualLink;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
-
-import static com.dragome.guia.listeners.KeyListener.KEY_ENTER;
-import static com.dragome.guia.listeners.KeyListener.KEY_ESC;
+import com.dragome.web.annotations.PageAlias;
 
 
 @PageAlias(alias= "todo-mvc")

@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.commons.compiler.annotations.CompilerType;
 import com.dragome.commons.compiler.annotations.DragomeCompilerSettings;
 import com.dragome.examples.model.Person;
@@ -27,6 +26,7 @@ import com.dragome.guia.components.interfaces.VisualButton;
 import com.dragome.guia.components.interfaces.VisualLabel;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.guia.components.interfaces.VisualTextField;
+import com.dragome.web.annotations.PageAlias;
  
 @DragomeCompilerSettings(CompilerType.Strict)
 @PageAlias(alias= "crud2")

@@ -10,12 +10,12 @@
  ******************************************************************************/
 package com.dragome.examples.crudgrid.view;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.examples.crudgrid.model.People;
 import com.dragome.examples.crudgrid.model.Place;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "crudgrid")
 public class GridCrudExamplePage extends GuiaVisualActivity

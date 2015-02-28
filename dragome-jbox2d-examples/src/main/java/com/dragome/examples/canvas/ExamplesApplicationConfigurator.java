@@ -15,15 +15,15 @@ import java.io.File;
 
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.compiler.CompilerMode;
-import com.dragome.config.DomHandlerApplicationConfigurator;
-import com.dragome.helpers.serverside.DefaultClasspathFilter;
+import com.dragome.web.config.DomHandlerApplicationConfigurator;
+import com.dragome.web.helpers.serverside.DefaultClasspathFilter;
 
 @DragomeConfiguratorImplementor
 public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfigurator
 {
 	public ExamplesApplicationConfigurator()
 	{
-		System.setProperty("dragome-compile-mode", CompilerMode.Debug.toString());
+		System.setProperty("dragome-compile-mode", CompilerMode.Production.toString());
 
 		setClasspathFilter(new DefaultClasspathFilter()
 		{
@@ -46,5 +46,10 @@ public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfig
 			}
 
 		});
+	}
+	
+	public boolean isCheckingCast()
+	{
+		return false;
 	}
 }

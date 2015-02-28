@@ -11,9 +11,9 @@
 package com.dragome.examples.todo;
 
 import com.dragome.commons.DragomeConfiguratorImplementor;
-import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.examples.todo.model.Todo;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
+import com.dragome.web.config.DomHandlerApplicationConfigurator;
 
 @DragomeConfiguratorImplementor
 public class TodoMVCApplicationConfigurator extends DomHandlerApplicationConfigurator

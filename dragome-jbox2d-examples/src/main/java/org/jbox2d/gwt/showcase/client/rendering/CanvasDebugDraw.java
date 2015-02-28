@@ -8,10 +8,10 @@ import org.jbox2d.common.Vec2;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.dragome.enhancers.jsdelegate.JsDelegateFactory;
-import com.dragome.html.dom.html5canvas.CanvasRenderingContext2D;
-import com.dragome.html.dom.html5canvas.HTMLCanvasElement;
 import com.dragome.services.ServiceLocator;
+import com.dragome.web.enhancers.jsdelegate.JsDelegateFactory;
+import com.dragome.web.html.dom.html5canvas.CanvasRenderingContext2D;
+import com.dragome.web.html.dom.html5canvas.HTMLCanvasElement;
 
 public class CanvasDebugDraw extends DebugDraw
 {

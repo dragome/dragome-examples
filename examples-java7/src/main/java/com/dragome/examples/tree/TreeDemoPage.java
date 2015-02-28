@@ -13,7 +13,6 @@ package com.dragome.examples.tree;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.examples.tree.service.FileSystemService;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.VisualPanelImpl;
@@ -23,6 +22,7 @@ import com.dragome.services.ServiceLocator;
 import com.dragome.services.interfaces.SerializationService;
 import com.dragome.templates.TemplateImpl;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 import flexjson.JSONContext;
 import flexjson.ObjectBinder;

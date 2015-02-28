@@ -5,10 +5,10 @@ import org.w3c.dom.Element;
 import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventListener;
 
-import com.dragome.annotations.PageAlias;
-import com.dragome.dispatcher.EventDispatcherImpl;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.services.ServiceLocator;
+import com.dragome.web.annotations.PageAlias;
+import com.dragome.web.dispatcher.EventDispatcherImpl;
 
 @PageAlias(alias= "test-dom1")
 public class TestDom1 extends GuiaVisualActivity

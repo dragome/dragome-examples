@@ -13,9 +13,9 @@ import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.KeyboardEvent;
 import org.w3c.dom.events.MouseEvent;
 
-import com.dragome.dispatcher.EventDispatcherImpl;
-import com.dragome.html.dom.html5canvas.HTMLCanvasElement;
 import com.dragome.templates.interfaces.Content;
+import com.dragome.web.dispatcher.EventDispatcherImpl;
+import com.dragome.web.html.dom.html5canvas.HTMLCanvasElement;
 
 public class ExampleView implements StartExampleEvent.StartExampleEventListener
 {

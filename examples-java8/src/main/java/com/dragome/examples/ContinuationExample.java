@@ -2,7 +2,6 @@ package com.dragome.examples;
 
 import java.util.Arrays;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.commons.ExecutionHandler;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.guia.GuiaServiceLocator;
@@ -15,6 +14,7 @@ import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.render.interfaces.TemplateHandler;
 import com.dragome.services.ServiceLocator;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "continuation1")
 public class ContinuationExample extends GuiaVisualActivity

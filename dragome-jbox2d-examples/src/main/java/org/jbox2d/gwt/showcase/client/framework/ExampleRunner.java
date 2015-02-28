@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import org.jbox2d.callbacks.DebugDraw;
 import org.jbox2d.common.Vec2;
 
-import com.dragome.html.dom.Timer;
+import com.dragome.web.html.dom.Timer;
 
 public class ExampleRunner implements StartExampleEvent.StartExampleEventListener, ExampleMouseEvent.ExampleMouseEventListener, ExampleKeyEvent.ExampleKeyEventListener
 {

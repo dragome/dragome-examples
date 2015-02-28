@@ -12,7 +12,6 @@ package com.dragome.examples.pectin;
 
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.client.bean.AbstractBeanModelProvider;
 import com.dragome.forms.bindings.client.value.ValueHolder;
 import com.dragome.forms.bindings.reflect.ReflectionBeanModelProvider;
@@ -21,6 +20,7 @@ import com.dragome.guia.components.VisualPanelImpl;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.templates.TemplateLayout;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "pectin")
 public class PectinDemo1 extends GuiaVisualActivity

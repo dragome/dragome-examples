@@ -4,8 +4,8 @@ import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import com.dragome.ExamplesApplicationConfigurator;
-import com.dragome.serverside.debugging.websocket.ClassTransformerDragomeWebSocketHandler;
 import com.dragome.services.ServiceLocator;
+import com.dragome.web.serverside.debugging.websocket.ClassTransformerDragomeWebSocketHandler;
 
 public class SwingLauncher
 {

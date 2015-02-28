@@ -2,13 +2,13 @@ package com.dragome.examples.tutorial;
 
 import java.util.Arrays;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.ObservableList;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.interfaces.VisualLabel;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.guia.components.interfaces.VisualTextField;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "repeat-with-filter")
 public class RepeatWithFilter extends GuiaVisualActivity

@@ -11,9 +11,9 @@
 package com.dragome.examples.crudgrid;
 
 import com.dragome.commons.DragomeConfiguratorImplementor;
-import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.examples.crudgrid.model.CrudGrid;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
+import com.dragome.web.config.DomHandlerApplicationConfigurator;
 
 @DragomeConfiguratorImplementor
 public class CrudGridApplicationConfigurator extends DomHandlerApplicationConfigurator

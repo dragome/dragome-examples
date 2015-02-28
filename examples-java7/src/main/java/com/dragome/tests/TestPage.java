@@ -14,9 +14,9 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.tests.bugs.TestTryBug;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias="tests")
 public class TestPage extends GuiaVisualActivity

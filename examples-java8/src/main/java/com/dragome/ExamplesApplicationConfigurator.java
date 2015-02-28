@@ -14,12 +14,12 @@ import com.dragome.callbackevictor.CallbackEvictorConfigurator;
 import com.dragome.commons.DragomeConfiguratorImplementor;
 import com.dragome.commons.ExecutionHandler;
 import com.dragome.commons.compiler.annotations.CompilerType;
-import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.examples.ContinuationExample;
 import com.dragome.examples.TimerDemoPage;
 import com.dragome.examples.model.Person;
 import com.dragome.examples.tutorial.RepeatWithFilter;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
+import com.dragome.web.config.DomHandlerApplicationConfigurator;
 
 @DragomeConfiguratorImplementor
 public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfigurator

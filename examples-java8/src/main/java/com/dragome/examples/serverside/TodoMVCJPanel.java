@@ -1,18 +1,19 @@
 package com.dragome.examples.serverside;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
-import net.miginfocom.swing.MigLayout;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JCheckBox;
-import javax.swing.JTextField;
 import javax.swing.JSeparator;
-import javax.swing.JButton;
-import javax.swing.border.BevelBorder;
+import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
+
+import net.miginfocom.swing.MigLayout;
 
 public class TodoMVCJPanel extends JPanel
 {

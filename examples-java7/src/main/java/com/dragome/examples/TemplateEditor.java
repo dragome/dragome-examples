@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.dragome.annotations.PageAlias;
 import com.dragome.forms.bindings.client.form.binding.FormBinder;
 import com.dragome.forms.bindings.client.value.MutableValueModel;
 import com.dragome.forms.bindings.client.value.ValueHolder;
@@ -34,6 +33,7 @@ import com.dragome.model.interfaces.ValueChangeHandler;
 import com.dragome.render.ItemProcessorImpl;
 import com.dragome.templates.TemplateRepeater;
 import com.dragome.templates.interfaces.Template;
+import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "template-editor")
 public class TemplateEditor extends GuiaVisualActivity
