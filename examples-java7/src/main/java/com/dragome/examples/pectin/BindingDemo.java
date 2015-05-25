@@ -22,7 +22,7 @@ import com.dragome.guia.components.VisualTextFieldImpl;
 import com.dragome.guia.components.interfaces.VisualComponent;
 import com.dragome.guia.components.interfaces.VisualListBox;
 import com.dragome.guia.components.interfaces.VisualTextField;
-import com.dragome.guia.listeners.ClickListener;
+import com.dragome.guia.events.listeners.interfaces.ClickListener;
 import com.dragome.web.annotations.PageAlias;
 
 @PageAlias(alias= "binding-demo")

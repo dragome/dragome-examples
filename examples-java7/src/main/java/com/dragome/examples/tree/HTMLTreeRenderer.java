@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
 import com.dragome.examples.tree.views.TreeNodeView;
 import com.dragome.guia.GuiaServiceLocator;
 import com.dragome.render.canvas.interfaces.Canvas;
-import com.dragome.render.html.components.MergeableElement;
+import com.dragome.render.html.renderers.MergeableElement;
 import com.dragome.render.interfaces.ComponentRenderer;
 import com.dragome.render.interfaces.View;
 import com.dragome.templates.TemplateLayout;

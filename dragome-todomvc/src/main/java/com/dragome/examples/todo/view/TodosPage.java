@@ -11,8 +11,8 @@
 package com.dragome.examples.todo.view;
 
 
-import static com.dragome.guia.listeners.KeyListener.KEY_ENTER;
-import static com.dragome.guia.listeners.KeyListener.KEY_ESC;
+import static com.dragome.guia.events.listeners.interfaces.KeyListener.KEY_ENTER;
+import static com.dragome.guia.events.listeners.interfaces.KeyListener.KEY_ESC;
 
 import java.util.stream.Stream;
 

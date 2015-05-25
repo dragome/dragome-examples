@@ -23,7 +23,7 @@ import com.dragome.guia.components.VisualLabelImpl;
 import com.dragome.guia.components.VisualPanelImpl;
 import com.dragome.guia.components.interfaces.VisualComponent;
 import com.dragome.guia.components.interfaces.VisualPanel;
-import com.dragome.guia.listeners.ClickListener;
+import com.dragome.guia.events.listeners.interfaces.ClickListener;
 import com.dragome.render.DefaultView;
 import com.dragome.render.interfaces.TemplateHandler;
 import com.dragome.templates.TemplateRepeater;
