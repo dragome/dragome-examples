@@ -11,9 +11,6 @@
 package com.dragome.examples.todo.view;
 
 
-import static com.dragome.guia.listeners.KeyListener.KEY_ENTER;
-import static com.dragome.guia.listeners.KeyListener.KEY_ESC;
-
 import java.util.stream.Stream;
 
 import com.dragome.examples.todo.model.Todo;
@@ -29,6 +26,8 @@ import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.services.ServiceLocator;
 import com.dragome.web.annotations.PageAlias;
+
+import static com.dragome.guia.events.listeners.interfaces.KeyListener.*;
 
 
 @PageAlias(alias= "todo-mvc")
@@ -73,13 +72,11 @@ public class TodosPage extends GuiaVisualActivity
 	{
 		footerBuilder.showWhen(() -> !todoManager.getTodos().isEmpty());
 		
-		footerBuilder.bindTemplate("items-count")
-			.as(VisualLabel.class)
+		footerBuilder.bindTemplate("items-count").as(VisualLabel.class)
 			.toProperty(todoManager::getRemainingCount, todoManager::setRemainingCount)
 			.build();
 		
-		footerBuilder.bindTemplate("items-label")
-			.as(VisualLabel.class)
+		footerBuilder.bindTemplate("items-label").as(VisualLabel.class)
 			.to(() -> todoManager.getRemainingCount() == 1 ? "item" : "items")
 			.build();
 
@@ -108,27 +105,23 @@ public class TodosPage extends GuiaVisualActivity
 
 	private void buildTodo(Todo todo, ComponentBuilder builder)
 	{
-		builder.bindTemplate("todo-input")
-    		.as(VisualTextField.class)
+		builder.bindTemplate("todo-input").as(VisualTextField.class)
     		.toProperty(todo::getTitle, todo::setTitle)
     		.onKeyUp((v, c) -> todoManager.doneEditing(todo, c== KEY_ESC), KEY_ESC, KEY_ENTER)
     		.onBlur(v -> todoManager.doneEditing(todo, false))
     		.build();
 		
-		builder.bindTemplate("title")
-    		.as(VisualLabel.class)
+		builder.bindTemplate("title").as(VisualLabel.class)
     		.toProperty(todo::getTitle, todo::setTitle)
     		.onDoubleClick(v -> todoManager.editTodo(todo))
     		.build();
 		
-		builder.bindTemplate("completed")
-    		.as(VisualCheckbox.class)
+		builder.bindTemplate("completed").as(VisualCheckbox.class)
     		.toProperty(todo::isCompleted, todo::setCompleted)
     		.onClick(v -> todoManager.todoCompleted(todo))
     		.build();
 		
-		builder.bindTemplate("destroy")
-    		.as(VisualButton.class)
+		builder.bindTemplate("destroy").as(VisualButton.class)
     		.onClick(v -> todoManager.removeTodo(todo))
     		.build();
 		

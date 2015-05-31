@@ -10,8 +10,8 @@ import org.w3c.dom.Element;
 
 import com.dragome.services.ServiceLocator;
 import com.dragome.web.enhancers.jsdelegate.JsDelegateFactory;
-import com.dragome.web.html.dom.html5canvas.CanvasRenderingContext2D;
-import com.dragome.web.html.dom.html5canvas.HTMLCanvasElement;
+import com.dragome.web.html.dom.html5canvas.interfaces.CanvasRenderingContext2D;
+import com.dragome.web.html.dom.html5canvas.interfaces.HTMLCanvasElement;
 
 public class CanvasDebugDraw extends DebugDraw
 {

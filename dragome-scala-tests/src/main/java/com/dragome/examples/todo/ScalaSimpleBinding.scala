@@ -30,5 +30,7 @@ class ScalaSimpleBinding() extends GuiaVisualActivity {
     val builder = new ComponentBuilder(mainPanel);
     builder bindTemplate "textfield" as textField toProperty (getText _, setText _) build;
     builder bindTemplate "label" as label toProperty getText _ onClick setText("clicked") build;
+    
+    builder bindTemplate "textfield" as textField toProperty (getText _, setText _) build;
   }
 }

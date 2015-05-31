@@ -49,7 +49,6 @@
 
 package org.jbox2d.structs.collision;
 
-import org.jbox2d.structs.collision.ContactID;
 import org.jbox2d.common.Vec2;
 
 // updated to rev 100

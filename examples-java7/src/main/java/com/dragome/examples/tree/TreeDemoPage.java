@@ -17,7 +17,7 @@ import com.dragome.examples.tree.service.FileSystemService;
 import com.dragome.guia.GuiaVisualActivity;
 import com.dragome.guia.components.VisualPanelImpl;
 import com.dragome.guia.components.interfaces.VisualPanel;
-import com.dragome.render.html.components.HTMLComponentRenderer;
+import com.dragome.render.html.renderers.HTMLComponentRenderer;
 import com.dragome.services.ServiceLocator;
 import com.dragome.services.interfaces.SerializationService;
 import com.dragome.templates.TemplateImpl;

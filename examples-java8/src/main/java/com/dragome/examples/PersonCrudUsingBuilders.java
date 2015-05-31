@@ -11,7 +11,6 @@
 package com.dragome.examples;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import com.dragome.commons.compiler.annotations.CompilerType;
@@ -21,7 +20,6 @@ import com.dragome.examples.service.PersonService;
 import com.dragome.forms.bindings.builders.ComponentBuilder;
 import com.dragome.forms.bindings.builders.ObservableList;
 import com.dragome.guia.GuiaVisualActivity;
-import com.dragome.guia.components.VisualComboBoxImpl;
 import com.dragome.guia.components.interfaces.VisualButton;
 import com.dragome.guia.components.interfaces.VisualLabel;
 import com.dragome.guia.components.interfaces.VisualPanel;
@@ -46,7 +44,7 @@ public class PersonCrudUsingBuilders extends GuiaVisualActivity
 			b.bindTemplate("givenName").as(VisualTextField.class).toProperty(person::getGivenName, person::setGivenName).build();
 			b.bindTemplate("surname").as(VisualTextField.class).toProperty(person::getSurname, person::setSurname).build();
 			b.bindTemplate("complete-name").as(VisualLabel.class).to(() -> person.getGivenName() + " " + person.getSurname()).build();
-			b.bindTemplate("nickname").to(new VisualComboBoxImpl<String>("nickname", Arrays.asList("Pelusa", "Burrito", "Bocha", "Bruja"))).toProperty(person::getNickname, person::setNickname).build();
+//			b.bindTemplate("nickname").to(new VisualComboBoxImpl<String>("nickname", Arrays.asList("Pelusa", "Burrito", "Bocha", "Bruja"))).toProperty(person::getNickname, person::setNickname).build();
 			b.bindTemplate("delete-button").as(VisualButton.class).onClick(() -> persons.remove(person)).build();
 		});
 	}

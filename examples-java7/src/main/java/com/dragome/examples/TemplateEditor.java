@@ -27,7 +27,7 @@ import com.dragome.guia.components.interfaces.VisualComponent;
 import com.dragome.guia.components.interfaces.VisualPanel;
 import com.dragome.guia.components.interfaces.VisualTextArea;
 import com.dragome.guia.components.interfaces.VisualTextField;
-import com.dragome.guia.listeners.ClickListener;
+import com.dragome.guia.events.listeners.interfaces.ClickListener;
 import com.dragome.model.interfaces.ValueChangeEvent;
 import com.dragome.model.interfaces.ValueChangeHandler;
 import com.dragome.render.ItemProcessorImpl;

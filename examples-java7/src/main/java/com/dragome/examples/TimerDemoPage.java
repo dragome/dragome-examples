@@ -8,7 +8,7 @@ import com.dragome.guia.components.interfaces.VisualButton;
 import com.dragome.guia.components.interfaces.VisualComponent;
 import com.dragome.guia.components.interfaces.VisualImage;
 import com.dragome.guia.components.interfaces.VisualLabel;
-import com.dragome.guia.listeners.ClickListener;
+import com.dragome.guia.events.listeners.interfaces.ClickListener;
 import com.dragome.web.annotations.PageAlias;
 import com.dragome.web.html.dom.Timer;
 
