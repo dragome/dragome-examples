@@ -8,6 +8,7 @@ import com.dragome.guia.GuiaServiceLocator;
 import com.dragome.render.serverside.swing.SwingGuiaServiceFactory;
 import com.dragome.render.serverside.swing.SwingTemplateLoadingStrategy;
 import com.dragome.services.ServiceLocator;
+import com.dragome.services.serverside.ServerReflectionServiceImpl;
 import com.dragome.view.VisualActivity;
 
 public class SwingCrudLauncher
@@ -19,7 +20,8 @@ public class SwingCrudLauncher
 
 	public void run()
 	{
-		GuiaServiceLocator.getInstance().setServiceFactory(new SwingGuiaServiceFactory());
+		ServiceLocator.getInstance().setReflectionService(new ServerReflectionServiceImpl());
+		//GuiaServiceLocator.getInstance().setServiceFactory(new SwingGuiaServiceFactory());
 		ServiceLocator.getInstance().setLocalExecution(true);
 		JPanel panel= new PersonCrudJPanel();
 		SwingTemplateLoadingStrategy.mainPanel= panel;
