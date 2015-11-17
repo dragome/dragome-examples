@@ -6,7 +6,7 @@ import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventListener;
 
 import com.dragome.guia.GuiaVisualActivity;
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.WebServiceLocator;
 import com.dragome.web.annotations.PageAlias;
 import com.dragome.web.dispatcher.EventDispatcherImpl;
 
@@ -17,7 +17,7 @@ public class TestDom1 extends GuiaVisualActivity
 
 	public void build()
 	{
-		Document document= ServiceLocator.getInstance().getDomHandler().getDocument();
+		Document document= WebServiceLocator.getInstance().getDomHandler().getDocument();
 
 		final Element div1= document.getElementById("div1");
 		div1.setAttribute("style", "position: relative;");

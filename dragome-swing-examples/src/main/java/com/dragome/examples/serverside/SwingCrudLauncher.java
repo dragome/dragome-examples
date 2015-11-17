@@ -21,7 +21,7 @@ public class SwingCrudLauncher
 	public void run()
 	{
 		ServiceLocator.getInstance().setReflectionService(new ServerReflectionServiceImpl());
-		//GuiaServiceLocator.getInstance().setServiceFactory(new SwingGuiaServiceFactory());
+		GuiaServiceLocator.getInstance().setServiceFactory(new SwingGuiaServiceFactory());
 		ServiceLocator.getInstance().setLocalExecution(true);
 		JPanel panel= new PersonCrudJPanel();
 		SwingTemplateLoadingStrategy.mainPanel= panel;

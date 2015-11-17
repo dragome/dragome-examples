@@ -79,15 +79,10 @@ public class TodosPage extends GuiaVisualActivity
 	private void buildTodo(Todo todo, ComponentBuilder builder)
 	{
 		builder.bindTemplate("todo-input").as(VisualTextField.class).toProperty(todo::getTitle, todo::setTitle).onKeyUp((v, c) -> todoManager.doneEditing(todo, c == KEY_ESC), KEY_ESC, KEY_ENTER).onBlur(v -> todoManager.doneEditing(todo, false)).build();
-
 		builder.bindTemplate("title").as(VisualLabel.class).toProperty(todo::getTitle, todo::setTitle).onDoubleClick(v -> todoManager.editTodo(todo)).build();
-
 		builder.bindTemplate("completed").as(VisualCheckbox.class).toProperty(todo::isCompleted, todo::setCompleted).onClick(v -> todoManager.todoCompleted(todo)).build();
-
 		builder.bindTemplate("destroy").as(VisualButton.class).onClick(v -> todoManager.removeTodo(todo)).build();
-
 		builder.styleWith("completed").when(todo::isCompleted);
-
 		builder.styleWith("editing").when(() -> todo == todoManager.getEditedTodo());
 	}
 }

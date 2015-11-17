@@ -8,7 +8,7 @@ import org.jbox2d.common.Vec2;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.dragome.services.ServiceLocator;
+import com.dragome.services.WebServiceLocator;
 import com.dragome.web.enhancers.jsdelegate.JsDelegateFactory;
 import com.dragome.web.html.dom.html5canvas.interfaces.CanvasRenderingContext2D;
 import com.dragome.web.html.dom.html5canvas.interfaces.HTMLCanvasElement;
@@ -25,7 +25,7 @@ public class CanvasDebugDraw extends DebugDraw
 
 	private int canvasWidth= DEFAULT_CANVAS_WIDTH;
 	private int canvasHeight= DEFAULT_CANVAS_HEIGHT;
-	private static Document document= ServiceLocator.getInstance().getDomHandler().getDocument();
+	private static Document document= WebServiceLocator.getInstance().getDomHandler().getDocument();
 
 	public CanvasDebugDraw(Element element)
 	{
