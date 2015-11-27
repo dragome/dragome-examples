@@ -26,8 +26,8 @@ public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfig
 
 	public ExamplesApplicationConfigurator()
 	{
-		callbackEvictorConfigurator= new CallbackEvictorConfigurator();
-		callbackEvictorConfigurator.setEnabled(false);
+		callbackEvictorConfigurator= new CallbackEvictorConfigurator(); 
+		callbackEvictorConfigurator.setEnabled(false); 
 
 		methodLoggerConfigurator= new MethodLoggerConfigurator(TimerDemoPage.class.getName());
 		methodLoggerConfigurator.setEnabled(true);
