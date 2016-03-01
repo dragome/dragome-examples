@@ -6,7 +6,6 @@
 
       <description>HSQLDB Persistence Unit</description>
       <provider>org.hibernate.ejb.HibernatePersistence</provider>
-      <class>com.dragome.examples.Person</class>
 
       <properties>
          <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
