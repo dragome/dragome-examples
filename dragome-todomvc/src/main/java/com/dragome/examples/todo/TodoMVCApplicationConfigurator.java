@@ -23,4 +23,10 @@ public class TodoMVCApplicationConfigurator extends DomHandlerApplicationConfigu
 		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(Todo.class.getPackage().getName());
 		init(methodLoggerConfigurator);
 	}
+
+//	public boolean filterClassPath(String classpathEntry)
+//	{
+//		boolean include= false || classpathEntry.contains("todomvc");
+//		return include;
+//	}
 }

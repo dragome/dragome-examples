@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Dragome-TodoMVC" default="obfuscate" basedir=".">
+
+  <target name="obfuscate">
+    <taskdef resource="proguard/ant/task.properties" classpath="/home/fernando/Downloads/proguard5.2.1/lib/proguard.jar"/>
+
+    <delete>
+      <fileset dir=".">
+        <include name="todomvc.jar"/>
+      </fileset>
+    </delete>
+
+    <proguard keepparameternames="false" obfuscate="true" allowaccessmodification="false" usemixedcaseclassnames="false" defaultpackage="" skipnonpubliclibraryclasses="false">
+
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-core/0.96-beta2/dragome-core-0.96-beta2.jar"/>
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-form-bindings/0.96-beta2/dragome-form-bindings-0.96-beta2.jar"/>
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-guia/0.96-beta2/dragome-guia-0.96-beta2.jar"/>
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-method-logger/0.96-beta2/dragome-method-logger-0.96-beta2.jar"/>
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-js-commons/0.96-beta2/dragome-js-commons-0.96-beta2.jar"/>
+      <injar name="/home/fernando/.m2/repository/com/dragome/dragome-js-jre/0.96-beta2/dragome-js-jre-0.96-beta2.jar"/>
+
+      <dontwarn filter="**"/>
+
+      <outjar name="./todomvc.jar"/>
+      
+      <optimization filter="method/inlining/unique,code/merging">
+          
+          
+      </optimization>
+
+      <keepattributes filter="*Annotation*"/>
+      <keepattributes filter="Signature"/>
+      <keepnames name="**">
+      </keepnames>
+
+      <keep name="com.dragome.forms.bindings.builders.Tester"></keep>
+      <keep name="com.dragome.forms.bindings.builders.LocalStorage"></keep>
+      <keep name="com.dragome.forms.bindings.builders.ComponentBuilder"></keep>
+      <keep name="com.dragome.services.serialization.MethodFactory"></keep>
+      <keep name="com.dragome.helpers.AnnotationsHelper"></keep>
+      <keep name="com.dragome.commons.compiler.annotations.**"></keep>
+      <keep name="com.dragome.helpers.DiscovererPage"></keep>
+
+      <keep name="com.dragome.guia.events.listeners.interfaces.KeyListener*"/>
+      <keep name="com.dragome.utils.**"/>
+      <keep name="com.dragome.methodlogger.**"/>
+      <keep name="com.dragome.annotations.**"/>
+      <keep name="com.dragome.web.annotations.**"/>
+      <keep name="com.dragome.web.dispatcher.**"/>
+
+      <keepclassmembers name="**">
+        <field name="*"/>
+        <method name="*"/>
+        <constructor/>
+      </keepclassmembers>
+
+    </proguard>
+
+  </target>
+
+</project>
+    

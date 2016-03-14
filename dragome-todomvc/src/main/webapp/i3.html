@@ -1,0 +1,44 @@
+
+<head>
+<title>Ajax Demo</title>
+<meta http-equive="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<p id=warning style="background: #FEB91E; color rgba(0,0,0,.5); border: 2 solid #965D2D; font-size: 25px; padding: 3px; display: none"></p>
+	<button id=go>Load</button>
+	<div id=area></div>
+	<script src="./lz4.js"></script>
+	<script>
+	function Uint8ToString(u8a){
+  var CHUNK_SZ = 0x8000;
+  var c = [];
+  for (var i=0; i < u8a.length; i+=CHUNK_SZ) {
+    c.push(String.fromCharCode.apply(null, u8a.subarray(i, i+CHUNK_SZ)));
+  }
+  return c.join("");
+}
+
+document.getElementById("go").onclick = function () {
+    var ajax = new XMLHttpRequest();
+    ajax.open("GET", "./compiled-js/webapp.js.lz4", true);
+    ajax.responseType = "arraybuffer";
+    
+    ajax.onload = function () {
+     	alert("empezo");
+    	var data= new Uint8Array(ajax.response);
+     	var d= lz4.decompress(data);
+     	document.getElementById("area").innerHTML = d;
+     	
+		var s= Uint8ToString(d);	
+     	alert("finalizo");
+     	eval(s);
+    };
+    
+    /// Clear the area for good measure.
+    document.getElementById("area").innerHTML = "";
+    
+    ajax.send();
+}
+
+</script>
+</body>
