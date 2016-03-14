@@ -10,6 +10,8 @@
  ******************************************************************************/
 package com.dragome.tests;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -21,10 +23,18 @@ import junit.framework.TestCase;
 
 public class ReflectionAPITests extends TestCase
 {
+	@Retention(RetentionPolicy.RUNTIME)
+	public @interface Annotation1
+	{
+		String value1() default "1";
+		String value2() default "1";
+	}
+
 	public class SuperClass implements ReflectionInterface1, ReflectionInterface2
 	{
 	}
 
+	@Annotation1(value1= "ReflectionInterface1")    
 	public interface ReflectionInterface1
 	{
 	}
@@ -33,13 +43,15 @@ public class ReflectionAPITests extends TestCase
 	{
 	}
 
+	@Annotation1(value1= "ReflectionClass")
 	public class ReflectionClass extends SuperClass
 	{
+		@Annotation1(value1= "methodWithNoArguments")
 		public void methodWithNoArguments()
 		{
 		}
 
-		public String methodWithIntegerArgument(Integer i)
+		public String methodWithIntegerArgument(@Annotation1(value1= "methodWithIntegerArgument_i") Integer i)
 		{
 			return i + "";
 		}
@@ -48,7 +60,7 @@ public class ReflectionAPITests extends TestCase
 		{
 		}
 
-		public void overridenMethod(String s, Long l)
+		public void overridenMethod(@Annotation1(value1= "value1=overridenMethod_s", value2= "value2=overridenMethod_s") String s, @Annotation1(value1= "overridenMethod_l") Long l)
 		{
 		}
 
@@ -57,7 +69,7 @@ public class ReflectionAPITests extends TestCase
 			return null;
 		}
 	}
-	
+
 	public void testSearchingForMethodWithNoArgumentsReturnsMethodWithSameName() throws Exception
 	{
 		Method method= ReflectionClass.class.getMethod("methodWithNoArguments", null);
@@ -70,7 +82,7 @@ public class ReflectionAPITests extends TestCase
 		assertEquals("methodWithIntegerArgument", method.getName());
 		assertEquals(Integer.class, method.getParameterTypes()[0]);
 	}
-	
+
 	public void testGetReturnTypeReturnsRightOne() throws Exception
 	{
 		Method method= ReflectionClass.class.getMethod("methodWithIntegerArgument", Integer.class);
@@ -81,10 +93,10 @@ public class ReflectionAPITests extends TestCase
 	{
 		Method method= new ReflectionClass().getClass().getMethod("methodWithGenericReturn");
 		Type genericReturnType= method.getGenericReturnType();
-		Type[] actualTypeArguments= ((ParameterizedType) genericReturnType).getActualTypeArguments();		
+		Type[] actualTypeArguments= ((ParameterizedType) genericReturnType).getActualTypeArguments();
 		assertEquals(String.class, actualTypeArguments[0]);
 	}
-	
+
 	public void testFoundOverridenMethodsMatchTheirArguments() throws Exception
 	{
 		Method overridenMethodStringLong= ReflectionClass.class.getMethod("overridenMethod", String.class, Long.class);
@@ -106,7 +118,7 @@ public class ReflectionAPITests extends TestCase
 	public void testGetMethodsReturnsAllMethods() throws Exception
 	{
 		Method[] methods= ReflectionClass.class.getMethods();
-		
+
 		Map<String, Method> methodsMap= new HashMap<String, Method>();
 		for (Method method : methods)
 			methodsMap.put(method.getName(), method);
@@ -116,7 +128,7 @@ public class ReflectionAPITests extends TestCase
 		assertNotNull(methodsMap.get("methodWithIntegerArgument"));
 		assertNotNull(methodsMap.get("overridenMethod"));
 	}
-	
+
 	public void testIsInterfaceOverClassIsFalse() throws Exception
 	{
 		assertFalse(ReflectionClass.class.isInterface());
@@ -186,4 +198,38 @@ public class ReflectionAPITests extends TestCase
 	{
 		assertTrue(Number.class.isAssignableFrom(Integer.class));
 	}
+
+	public void testGettingAnnotationFromInterface() throws Exception
+	{
+		Annotation1 annotation1= ReflectionInterface1.class.getAnnotation(Annotation1.class);
+		assertEquals("ReflectionInterface1", annotation1.value1());
+	}
+
+	public void testGettingAnnotationFromMethod() throws Exception
+	{
+		Class<ReflectionClass> class1= ReflectionClass.class;
+		Method method= class1.getMethod("methodWithNoArguments", null);
+		Annotation1 annotation1= method.getAnnotation(Annotation1.class);
+		assertEquals("methodWithNoArguments", annotation1.value1());
+	}
+
+	public void testGettingAnnotationFromParameter() throws Exception
+	{
+		Class<ReflectionClass> class1= ReflectionClass.class;
+		Method method= class1.getMethod("methodWithIntegerArgument", Integer.class);
+		Annotation1 annotation1= method.getParameters()[0].getAnnotation(Annotation1.class);
+		assertEquals("methodWithIntegerArgument_i", annotation1.value1());
+	}
+	
+	public void testGettingAnnotationFromTwoParameters() throws Exception
+	{
+		Class<ReflectionClass> class1= ReflectionClass.class;
+		Method method= class1.getMethod("overridenMethod", String.class, Long.class);
+		Annotation1 annotation1= method.getParameters()[0].getAnnotation(Annotation1.class);
+		Annotation1 annotation2= method.getParameters()[1].getAnnotation(Annotation1.class);
+		assertEquals("value1=overridenMethod_s", annotation1.value1());
+		assertEquals("value2=overridenMethod_s", annotation1.value2());
+		assertEquals("overridenMethod_l", annotation2.value1());
+	}
+
 }
