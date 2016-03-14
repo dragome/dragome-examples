@@ -32,8 +32,10 @@ import com.dragome.web.annotations.PageAlias;
 @PageAlias(alias= "todo-mvc")
 public class TodosPage extends GuiaVisualActivity
 {
+	@PageAlias(alias= "todoManager")
 	private TodoManager todoManager;
 
+	@PageAlias(alias= "build")
 	public void build()
 	{
 		todoManager= new TodoManager(ServiceLocator.getInstance().getParametersHandler().getFragment(), new LocalStorage());
@@ -45,7 +47,7 @@ public class TodosPage extends GuiaVisualActivity
 		componentBuilder.bindTemplate("footer-section").as(VisualPanel.class).buildChildren(this::buildFooter);
 	}
 
-	private void buildMainSection(ComponentBuilder mainSectionBuilder)
+	private void buildMainSection(@PageAlias(alias= "mainSectionBuilder") ComponentBuilder mainSectionBuilder)
 	{
 		VisualCheckbox allChecked= mainSectionBuilder.bindTemplate("toggle-all").as(VisualCheckbox.class).toProperty(todoManager::isAllChecked, todoManager::setAllChecked).onClick(v -> todoManager.markAll(!todoManager.isAllChecked())).build();
 

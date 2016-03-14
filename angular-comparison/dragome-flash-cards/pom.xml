@@ -57,7 +57,7 @@
     <dependency>
       <groupId>com.dragome</groupId>
       <artifactId>dragome-sdk</artifactId>
-      <version>0.96-beta2</version>
+      <version>0.96-beta3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>

@@ -7,6 +7,7 @@ import com.dragome.guia.components.interfaces.VisualLabel;
 import com.dragome.guia.components.interfaces.VisualTextField;
 import com.dragome.web.annotations.PageAlias;
 
+@Deprecated
 @PageAlias(alias= "test1")
 public class Test1Page extends GuiaVisualActivity
 {
