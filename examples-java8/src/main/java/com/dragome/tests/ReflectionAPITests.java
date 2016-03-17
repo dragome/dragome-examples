@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright (c) 2011-2014 Fernando Petrola
- * 
+ *
  *  This file is part of Dragome SDK.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Public License v3.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@ package com.dragome.tests;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -34,7 +35,7 @@ public class ReflectionAPITests extends TestCase
 	{
 	}
 
-	@Annotation1(value1= "ReflectionInterface1")    
+	@Annotation1(value1= "ReflectionInterface1")
 	public interface ReflectionInterface1
 	{
 	}
@@ -46,6 +47,9 @@ public class ReflectionAPITests extends TestCase
 	@Annotation1(value1= "ReflectionClass")
 	public class ReflectionClass extends SuperClass
 	{
+		@Annotation1(value1= "value1:field1")
+		public boolean field1;
+
 		@Annotation1(value1= "methodWithNoArguments")
 		public void methodWithNoArguments()
 		{
@@ -127,6 +131,15 @@ public class ReflectionAPITests extends TestCase
 		assertNotNull(methodsMap.get("methodWithNoArguments"));
 		assertNotNull(methodsMap.get("methodWithIntegerArgument"));
 		assertNotNull(methodsMap.get("overridenMethod"));
+	}
+
+	public void testSetFieldWithTrue() throws Exception
+	{
+		Field field= ReflectionClass.class.getField("field1");
+		ReflectionClass obj= new ReflectionClass();
+		field.set(obj, true);
+
+		assertEquals(true, obj.field1);
 	}
 
 	public void testIsInterfaceOverClassIsFalse() throws Exception
@@ -220,7 +233,7 @@ public class ReflectionAPITests extends TestCase
 		Annotation1 annotation1= method.getParameters()[0].getAnnotation(Annotation1.class);
 		assertEquals("methodWithIntegerArgument_i", annotation1.value1());
 	}
-	
+
 	public void testGettingAnnotationFromTwoParameters() throws Exception
 	{
 		Class<ReflectionClass> class1= ReflectionClass.class;
@@ -232,4 +245,11 @@ public class ReflectionAPITests extends TestCase
 		assertEquals("overridenMethod_l", annotation2.value1());
 	}
 
+	public void testGettingAnnotationFromField() throws Exception
+	{
+		Class<ReflectionClass> class1= ReflectionClass.class;
+		Field field= class1.getField("field1");
+		Annotation1 annotation1= field.getAnnotation(Annotation1.class);
+		assertEquals("value1:field1", annotation1.value1());
+	}
 }
