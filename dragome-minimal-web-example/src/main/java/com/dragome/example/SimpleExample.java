@@ -28,7 +28,7 @@ public class SimpleExample extends DefaultVisualActivity
 		{
 			public void handleEvent(Event event)
 			{
-				messageElement.setTextContent("hello world - " + event.getType());
+				messageElement.setTextContent("hello world - " + event.getType() + ":" + System.currentTimeMillis());
 			}
 		}, false);
 	}
@@ -37,7 +37,8 @@ public class SimpleExample extends DefaultVisualActivity
 	{
 		ScriptHelper.putMethodReference("handleEventMethod", EventListener.class, this).handleEvent(null);
 		ScriptHelper.put("eventListener", eventListener, this);
-		ScriptHelper.eval("var listener= function(){handleEventMethod.apply(eventListener, arguments)}", this);
+		Object listener= ScriptHelper.eval("(function(){handleEventMethod.apply(eventListener, arguments)})", this);
+		ScriptHelper.put("listener", listener, this);
 
 		ScriptHelper.put("javaRefId", DragomeEntityManager.add(eventListener), this);
 		ScriptHelper.eval("eventListener.javaRefId= javaRefId", this);
