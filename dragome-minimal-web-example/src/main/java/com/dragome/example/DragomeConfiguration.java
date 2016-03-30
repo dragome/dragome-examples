@@ -3,6 +3,7 @@ package com.dragome.example;
 import java.util.Arrays;
 import java.util.List;
 
+import org.w3c.dom.XMLHttpRequest;
 import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventTarget;
 
@@ -12,7 +13,7 @@ import com.dragome.web.config.DomHandlerApplicationConfigurator;
 @DragomeConfiguratorImplementor
 public class DragomeConfiguration extends DomHandlerApplicationConfigurator
 {
-    private static List<? extends Class<?>> delegates= Arrays.asList(EventTarget.class, Event.class);
+    private static List<? extends Class<?>> delegates= Arrays.asList(EventTarget.class, Event.class, XMLHttpRequest.class);
 
     public DragomeConfiguration()
     {

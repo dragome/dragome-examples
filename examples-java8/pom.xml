@@ -9,6 +9,22 @@
 
   <!-- <repositories> <repository> <id>JBOSS_NEXUS</id> <url>http://repository.jboss.org/nexus/content/groups/public</url> </repository> <repository> <id>dragome</id> <name>dragome</name> <url>https://raw.github.com/dragome/dragome/master/maven</url> </repository> </repositories> -->
 
+<repositories>
+    <repository>
+      <id>JBOSS_NEXUS</id>
+      <url>http://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>sonatype-snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+    <repository>
+      <id>dragome</id>
+      <name>dragome</name>
+      <url>https://raw.github.com/dragome/dragome/master/maven</url>
+    </repository>
+  </repositories>
+
   <pluginRepositories>
     <pluginRepository>
       <id>dragome</id>

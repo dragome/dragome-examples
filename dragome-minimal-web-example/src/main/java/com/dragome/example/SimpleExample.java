@@ -2,10 +2,11 @@ package com.dragome.example;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.EventHandler;
+import org.w3c.dom.XMLHttpRequest;
 import org.w3c.dom.events.Event;
 import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
-import org.w3c.dom.typedarray.ArrayBuffer;
 
 import com.dragome.commons.javascript.ScriptHelper;
 import com.dragome.services.WebServiceLocator;
@@ -23,11 +24,19 @@ public class SimpleExample extends DefaultVisualActivity
 		Element button= document.getElementById("button");
 		final Element messageElement= document.getElementById("message");
 
+		final XMLHttpRequest httpRequest= ScriptHelper.evalCasting("new XMLHttpRequest()", XMLHttpRequest.class, null);
+		httpRequest.setOnreadystatechange(new EventHandler()
+		{
+			public void handleEvent(Event event)
+			{
+				System.out.println(httpRequest.getResponseText());
+			}
+		});
+
+		httpRequest.open("get", "/example/dragome-resources/css/dragome.css");
+		httpRequest.send();
+
 		EventTarget eventTarget= JsCast.castTo(button, EventTarget.class);
-
-		ArrayBuffer arrayBuffer= ScriptHelper.evalCasting("new ArrayBuffer(13);", ArrayBuffer.class, null);
-		int byteLength= arrayBuffer.getByteLength();
-
 		eventTarget.addEventListener("click", new EventListener()
 		{
 			public void handleEvent(Event event)
