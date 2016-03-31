@@ -1,217 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
- <modelVersion>4.0.0</modelVersion>
- <groupId>com.dragome.examples</groupId>
- <artifactId>minimal-web-example</artifactId>
- <packaging>war</packaging>
- <version>0.0.1-SNAPSHOT</version>
- <name>app1</name>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dragome.examples</groupId>
+  <artifactId>minimal-web-example</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>app1</name>
 
- <repositories>
-  <repository>
-   <id>JBOSS_NEXUS</id>
-   <url>http://repository.jboss.org/nexus/content/groups/public</url>
-  </repository>
-  <repository>
-   <id>dragome</id>
-   <name>dragome</name>
-   <url>https://raw.github.com/dragome/dragome/master/maven</url>
-  </repository>
- </repositories>
+  <repositories>
+    <repository>
+      <id>JBOSS_NEXUS</id>
+      <url>http://repository.jboss.org/nexus/content/groups/public</url>
+    </repository>
+    <repository>
+      <id>dragome</id>
+      <name>dragome</name>
+      <url>https://raw.github.com/dragome/dragome/master/maven</url>
+    </repository>
+  </repositories>
 
- <dependencies>
-  <dependency>
-   <groupId>com.dragome</groupId>
-   <artifactId>dragome-bytecode-js-compiler</artifactId>
-   <version>0.96-beta3-SNAPSHOT</version>
-  </dependency>
-  <dependency>
-   <groupId>com.dragome</groupId>
-   <artifactId>dragome-js-jre</artifactId>
-   <version>0.96-beta3-SNAPSHOT</version>
-  </dependency>
-  <dependency>
-   <groupId>com.dragome</groupId>
-   <artifactId>dragome-web</artifactId>
-   <version>0.96-beta3-SNAPSHOT</version>
-  </dependency>
+  <dependencies>
+    <dependency>
+      <groupId>com.dragome</groupId>
+      <artifactId>dragome-bytecode-js-compiler</artifactId>
+      <version>0.96-beta3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.dragome</groupId>
+      <artifactId>dragome-js-jre</artifactId>
+      <version>0.96-beta3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.dragome</groupId>
+      <artifactId>dragome-web</artifactId>
+      <version>0.96-beta3-SNAPSHOT</version>
+    </dependency>
 
- </dependencies>
-
-
- <build>
-  <finalName>example</finalName>
-  <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
-  <plugins>
-
-   <!-- <plugin> -->
-   <!-- <groupId>com.dragome</groupId> -->
-   <!-- <artifactId>dragome-maven-plugin</artifactId> -->
-   <!-- <version>0.96-beta2</version> -->
-   <!-- <executions> -->
-   <!-- <execution> -->
-   <!-- <phase>prepare-package</phase> -->
-   <!-- <goals> -->
-   <!-- <goal>compileclient</goal> -->
-   <!-- </goals> -->
-   <!-- </execution> -->
-   <!-- </executions> -->
-   <!-- <configuration> -->
-   <!-- <destinationDirectory>${project.build.directory}/${project.build.finalName}</destinationDirectory> -->
-   <!-- <forceRebuild>true</forceRebuild> -->
-   <!-- <removeCache>false</removeCache> -->
-   <!-- <targetClassName>com.dragome.example.SimpleExample</targetClassName> -->
-   <!-- <compress>true</compress> -->
-   <!-- <processSingle>true</processSingle> -->
-   <!-- </configuration> -->
-   <!-- <dependencies> -->
-   <!-- <dependency> -->
-   <!-- <groupId>com.dragome.examples</groupId> -->
-   <!-- <artifactId>minimal-web-example</artifactId> -->
-   <!-- <version>0.0.1-SNAPSHOT</version> -->
-   <!-- </dependency> -->
-   <!-- </dependencies> -->
-   <!-- </plugin> -->
-
-   <plugin>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.1</version>
-    <configuration>
-     <source>1.7</source>
-     <target>1.7</target>
-    </configuration>
-   </plugin>
-
-   <plugin>
-    <groupId>org.eclipse.jetty</groupId>
-    <artifactId>jetty-maven-plugin</artifactId>
-    <version>9.1.3.v20140225</version>
-    <configuration>
-     <webApp>
-      <defaultsDescriptor>${basedir}/src/main/resources/webdefault.xml</defaultsDescriptor>
-      <contextPath>/example</contextPath>
-     </webApp>
-     <classesDirectory>${basedir}/src/main/webapp/WEB-INF/classes</classesDirectory>
-     <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
-     <connectors>
-      <connector implementation="org.eclipse.jetty.server.ServerConnector">
-       <port>8080</port>
-       <maxIdleTime>7000000</maxIdleTime>
-      </connector>
-     </connectors>
-    </configuration>
-
-    <dependencies>
-     <dependency>
-      <groupId>org.ow2.asm</groupId>
-      <artifactId>asm</artifactId>
-      <version>5.0.2</version>
-     </dependency>
-     <dependency>
-      <groupId>org.ow2.asm</groupId>
-      <artifactId>asm-commons</artifactId>
-      <version>5.0.2</version>
-     </dependency>
-    </dependencies>
-
-   </plugin>
-
-
-   <plugin>
-    <groupId>com.pyx4me</groupId>
-    <artifactId>proguard-maven-plugin</artifactId>
-    <executions>
-     <execution>
-      <phase>package</phase>
-      <goals>
-       <goal>proguard</goal>
-      </goals>
-     </execution>
-    </executions>
-    <configuration>
-     <proguardVersion>4.10</proguardVersion>
-     <options>
-
-      <injar>${project.build.finalName}.jar</injar>
-      <outjar>${project.build.finalName}-small.jar</outjar>
-      <option>-allowaccessmodification</option>
-      <option>-keep public class main.Main { *; }</option>
-     </options>
-     <libs>
-      <lib>${java.home}/lib/rt.jar</lib>
-      <lib>${java.home}/lib/jce.jar</lib>
-     </libs>
-    </configuration>
-    <dependencies>
-
-     <dependency>
+    <dependency>
       <groupId>net.sf.proguard</groupId>
       <artifactId>proguard-base</artifactId>
-      <version>4.10</version>
-      <!--<version>5.2.1</version> -->
-     </dependency>
+      <version>5.2.1</version>
+    </dependency>
 
-    </dependencies>
-   </plugin>
+    <dependency>
+      <groupId>com.dragome</groupId>
+      <artifactId>express</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/dragome-express2.jar</systemPath>
+    </dependency>
+  </dependencies>
 
-<!--    <plugin> -->
-<!--     <groupId>com.github.wvengen</groupId> -->
-<!--     <artifactId>proguard-maven-plugin</artifactId> -->
-<!--     <version>2.0.8</version> -->
-<!--     <executions> -->
-<!--      <execution> -->
-<!--       <phase>verify</phase> -->
-<!--       <goals> -->
-<!--        <goal>proguard</goal> -->
-<!--       </goals> -->
-<!--      </execution> -->
-<!--     </executions> -->
 
-<!--     <configuration> -->
-<!--      <injar>target/example.war</injar> -->
-<!--      <outjar>example-mini.war</outjar> -->
-<!--      <obfuscate>false</obfuscate> -->
-<!--      <includeDependency>true</includeDependency> -->
-<!--      <outputDirectory>${project.build.directory}</outputDirectory> -->
-<!--      <maxMemory>256m</maxMemory> -->
-<!--      <libs> -->
-<!--       Java Runtime -->
-<!--       <lib>${java.home}/lib/rt.jar</lib> -->
-<!--       Libraries added within the WAR file -->
-<!--       <lib>${maven.repo}/antlr/antlr/2.7.7/antlr-2.7.7.jar</lib> -->
-<!--      </libs> -->
-<!--      <options> -->
-<!--       <option>-allowaccessmodification</option> -->
-<!--       <option>-dontskipnonpubliclibraryclasses</option> -->
-<!--       <option>-dontskipnonpubliclibraryclassmembers</option> -->
-<!--       <option>-keepattributes *Annotation*</option> -->
-<!--       <option>-keepattributes Signature</option> -->
-<!--       <option>-keepattributes InnerClasses,EnclosingMethod</option> -->
+  <build>
+    <finalName>example</finalName>
+    <outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
+    <plugins>
 
-<!--       <option>-dontshrink</option> -->
-<!--       <option>-dontoptimize</option> -->
-<!--       <option>-dontnote</option> -->
+      <!-- <plugin> -->
+      <!-- <groupId>com.dragome</groupId> -->
+      <!-- <artifactId>dragome-maven-plugin</artifactId> -->
+      <!-- <version>0.96-beta2</version> -->
+      <!-- <executions> -->
+      <!-- <execution> -->
+      <!-- <phase>prepare-package</phase> -->
+      <!-- <goals> -->
+      <!-- <goal>compileclient</goal> -->
+      <!-- </goals> -->
+      <!-- </execution> -->
+      <!-- </executions> -->
+      <!-- <configuration> -->
+      <!-- <destinationDirectory>${project.build.directory}/${project.build.finalName}</destinationDirectory> -->
+      <!-- <forceRebuild>true</forceRebuild> -->
+      <!-- <removeCache>false</removeCache> -->
+      <!-- <targetClassName>com.dragome.example.SimpleExample</targetClassName> -->
+      <!-- <compress>true</compress> -->
+      <!-- <processSingle>true</processSingle> -->
+      <!-- </configuration> -->
+      <!-- <dependencies> -->
+      <!-- <dependency> -->
+      <!-- <groupId>com.dragome.examples</groupId> -->
+      <!-- <artifactId>minimal-web-example</artifactId> -->
+      <!-- <version>0.0.1-SNAPSHOT</version> -->
+      <!-- </dependency> -->
+      <!-- </dependencies> -->
+      <!-- </plugin> -->
 
-<!--       <option>-dontwarn org.w3c.dom.**</option> -->
-<!--       <option>-printseeds</option> -->
-<!--       <option>-printmap obfuscation.map</option> -->
-<!--       <option>-printusage deadcode.txt</option> -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
 
-<!--       <option>-verbose</option> -->
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.1.3.v20140225</version>
+        <configuration>
+          <webApp>
+            <defaultsDescriptor>${basedir}/src/main/resources/webdefault.xml</defaultsDescriptor>
+            <contextPath>/example</contextPath>
+          </webApp>
+          <classesDirectory>${basedir}/src/main/webapp/WEB-INF/classes</classesDirectory>
+          <webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
+          <connectors>
+            <connector implementation="org.eclipse.jetty.server.ServerConnector">
+              <port>8080</port>
+              <maxIdleTime>7000000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
 
-<!--       <option>-keep class !com.mycompany.** { *; }</option> -->
-<!--       <option>-keep class com.mycompany.utility.log.** { *;} </option> -->
-<!--       <option>-keep class com.mycompany.listeners.** {*;}</option> -->
-<!--       <option>-keep class com.mycompany.controller.** {*;}</option> -->
-<!--       <option>-keep @javax.persistence.* class * {*;}</option> -->
-<!--       <option>-keep class * implements java.sql.Driver</option> -->
-<!--      </options> -->
-<!--     </configuration> -->
-<!--    </plugin> -->
+        <dependencies>
+          <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>5.0.2</version>
+          </dependency>
+          <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>5.0.2</version>
+          </dependency>
+        </dependencies>
 
-  </plugins>
- </build>
+      </plugin>
+
+    </plugins>
+  </build>
 
 
 </project>
