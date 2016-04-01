@@ -24,13 +24,13 @@ public class DragomeConfiguration extends DomHandlerApplicationConfigurator
 	{
 		boolean include= false;
 
-//		include|= classpathEntry.contains("dragome-w3c-standards-");
-//		include|= classpathEntry.contains("dragome-js-jre-");
-//		include|= classpathEntry.contains("dragome-js-commons-");
-//		include|= classpathEntry.contains("dragome-core-");
-//		include|= classpathEntry.contains("dragome-web-");
+		include|= classpathEntry.contains("dragome-w3c-standards-");
+		include|= classpathEntry.contains("dragome-js-jre-");
+		include|= classpathEntry.contains("dragome-js-commons-");
+		include|= classpathEntry.contains("dragome-core-");
+		include|= classpathEntry.contains("dragome-web-");
 
-		include|= classpathEntry.contains("dragome-express");
+//		include|= classpathEntry.contains("dragome-express");
 
 		return include;
 	}
