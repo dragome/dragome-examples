@@ -116,6 +116,7 @@
      <targetClassName>com.dragome.example.SimpleExample</targetClassName>
      <compress>true</compress>
      <processSingle>true</processSingle>
+     <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
     </configuration>
     <dependencies>
      <dependency>
