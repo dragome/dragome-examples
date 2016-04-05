@@ -5,3 +5,12 @@ compiled-js/
 WEB-INF/classes/
 dragome-todomvc/src/main/webapp/dragome/
 */db/**
+bin/
+.metadata
+.project
+.externalToolBuilders/
+.launch
+.classpath
+.factorypath
+*.jar
+
