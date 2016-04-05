@@ -25,6 +25,12 @@
    <groupId>com.dragome</groupId>
    <artifactId>dragome-web</artifactId>
    <version>0.96-beta3-SNAPSHOT</version>
+   <exclusions>
+    <exclusion>
+     <artifactId>xml-apis</artifactId>
+     <groupId>xml-apis</groupId>
+    </exclusion>
+   </exclusions>
   </dependency>
   <dependency>
    <groupId>com.dragome</groupId>
@@ -34,6 +40,11 @@
   <dependency>
    <groupId>com.dragome</groupId>
    <artifactId>dragome-js-jre</artifactId>
+   <version>0.96-beta3-SNAPSHOT</version>
+  </dependency>
+  <dependency>
+   <groupId>com.dragome</groupId>
+   <artifactId>dragome-w3c-standards</artifactId>
    <version>0.96-beta3-SNAPSHOT</version>
   </dependency>
  </dependencies>
