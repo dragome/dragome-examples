@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright (c) 2011-2015 Fernando Petrola
- * 
+ *
  *  This file is part of Dragome SDK.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Public License v3.0
  * which accompanies this distribution, and is available at
@@ -11,25 +11,25 @@
 package com.dragome.examples.todo;
 
 import java.io.File;
-import java.io.FileFilter;
+import java.net.URL;
 
 import com.dragome.commons.DragomeConfiguratorImplementor;
+import com.dragome.commons.compiler.ClasspathFileFilter;
 import com.dragome.commons.compiler.CompilerMode;
-import com.dragome.config.DomHandlerApplicationConfigurator;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
+import com.dragome.web.config.DomHandlerApplicationConfigurator;
 
 @DragomeConfiguratorImplementor
 public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConfigurator
 {
 	public ScalaTestsApplicationConfigurator()
 	{
-		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator(ScalaSimpleBinding.class.getName());
+		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator("com.dragome.examples.todo.ScalaSimpleBinding");
 		init(methodLoggerConfigurator);
 
-		setClasspathFilter(new FileFilter()
+		setClasspathFilter(new ClasspathFileFilter()
 		{
-
-			public boolean accept(File pathname)
+			public boolean accept(File pathname, File folder)
 			{
 				String string= pathname.toString();
 				boolean isServerSideOnly= string.contains("/serverside");
@@ -58,8 +58,19 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 	{
 		boolean include= super.filterClassPath(classpathEntry);
 		include|= classpathEntry.contains("scala-library-");
+//		include|= classpathEntry.contains("my-stuff-0.1.0-SNAPSHOT-standalone");
 
 		return include;
 	}
 
+	public boolean isRemoveUnusedCode()
+	{
+		return true;
+	}
+
+	public URL getAdditionalCodeKeepConfigFile()
+	{
+		URL resource= getClass().getResource("/proguard-extra.conf");
+		return resource;
+	}
 }
