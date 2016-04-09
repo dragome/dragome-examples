@@ -12,11 +12,12 @@
  */
 package com.dragome.examples.todo
 
-import com.dragome.annotations.PageAlias
+import com.dragome.web.annotations.PageAlias
+import com.dragome.guia.events.listeners.interfaces.ClickListener
+import com.dragome.guia.events.listeners.interfaces.KeyUpListener
 import com.dragome.guia.GuiaVisualActivity
 import com.dragome.forms.bindings.builders.ComponentBuilder
 import com.dragome.guia.components.interfaces.VisualComponent
-import com.dragome.guia.listeners.ClickListener
 import com.dragome.guia.components.interfaces.{ VisualLabel, VisualTextField }
 import scala.beans.BeanProperty
 import com.dragome.forms.bindings.builders.Consumer
@@ -28,7 +29,6 @@ import com.dragome.guia.components.interfaces.VisualCheckbox
 import com.dragome.guia.components.VisualRadioButton
 import com.dragome.guia.components.interfaces.VisualButton
 import com.dragome.forms.bindings.builders.ChildrenBuilder
-import com.dragome.guia.listeners.KeyUpListener
 
 object Definitions {
   implicit def lambda2clickListener(f: VisualComponent => Unit) = new ClickListener {
