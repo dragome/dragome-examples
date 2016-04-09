@@ -1,5 +1,6 @@
 package com.dragome.example;
 
+import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,8 +31,14 @@ public class DragomeConfiguration extends DomHandlerApplicationConfigurator
 		include|= classpathEntry.contains("dragome-core-");
 		include|= classpathEntry.contains("dragome-web-");
 
-//		include|= classpathEntry.contains("dragome-express");
+		//		include|= classpathEntry.contains("dragome-express");
 
 		return include;
 	}
+
+	public URL getAdditionalCodeKeepConfigFile()
+	{
+		return getClass().getResource("/additional-code-keep.conf");
+	}
+
 }
