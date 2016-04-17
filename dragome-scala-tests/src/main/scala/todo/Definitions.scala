@@ -36,7 +36,7 @@ object Definitions {
   }
 
   implicit def lambda2ChildrenBuilder(f: ComponentBuilder => Unit) = new ChildrenBuilder {
-	  def build(builder: ComponentBuilder) = f(builder)
+    def build(builder: ComponentBuilder) = f(builder)
   }
 
   implicit def lambda2ActionExecutor(f: => Unit) = new ActionExecutor {
@@ -51,9 +51,12 @@ object Definitions {
     def accept(v: T) = f(v);
   }
 
-  
   implicit def lambda2keyUpListener(f: () => Unit) = new KeyUpListener {
     def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f()
+  }
+
+  implicit def boolgetter2Supplier(f: () => scala.Boolean) = new Supplier[java.lang.Boolean] {
+    def get() = f.apply();
   }
 
   //implicit def sbool2jbool(bool: scala.Boolean): java.lang.Boolean = new java.lang.Boolean(bool.toString())
