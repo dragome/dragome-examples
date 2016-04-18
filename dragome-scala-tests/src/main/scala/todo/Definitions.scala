@@ -29,43 +29,72 @@ import com.dragome.guia.components.interfaces.VisualCheckbox
 import com.dragome.guia.components.VisualRadioButton
 import com.dragome.guia.components.interfaces.VisualButton
 import com.dragome.forms.bindings.builders.ChildrenBuilder
+import com.dragome.guia.events.listeners.interfaces.BlurListener
+import com.dragome.guia.components.interfaces.VisualLink
+import com.dragome.forms.bindings.client.value.ValueSource
+import com.dragome.forms.bindings.builders.helpers.ItemRepeaterHelper
 
 object Definitions {
-  implicit def lambda2clickListener(f: VisualComponent => Unit) = new ClickListener {
-    def clickPerformed(component: VisualComponent) = f(component)
-  }
+    implicit def lambda2clickListener(f: VisualComponent => Unit) = new ClickListener {
+        def clickPerformed(component: VisualComponent) = f(component)
+    }
 
-  implicit def lambda2ChildrenBuilder(f: ComponentBuilder => Unit) = new ChildrenBuilder {
-    def build(builder: ComponentBuilder) = f(builder)
-  }
+    implicit def lambda2blurListener(f: => Unit) = new BlurListener {
+        def blurPerformed(component: VisualComponent) = f
+    }
 
-  implicit def lambda2ActionExecutor(f: => Unit) = new ActionExecutor {
-    def execute() = f;
-  }
+    implicit def lambda2keyupListener(f: => Unit) = new KeyUpListener {
+        def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f
+    }
 
-  implicit def getter2Supplier[T](f: () => T) = new Supplier[T] {
-    def get() = f.apply();
-  }
+    implicit def lambda2keyupListener(f: (VisualComponent, Int) => Unit) = new KeyUpListener {
+        def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f(visualComponent, keyCode)
+    }
 
-  implicit def setter2Consumer[T](f: T => Unit) = new Consumer[T] {
-    def accept(v: T) = f(v);
-  }
+    implicit def lambda2ChildrenBuilder(f: ComponentBuilder => Unit) = new ChildrenBuilder {
+        def build(builder: ComponentBuilder) = f(builder)
+    }
 
-  implicit def lambda2keyUpListener(f: () => Unit) = new KeyUpListener {
-    def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f()
-  }
+    implicit def lambda2ActionExecutor(f: => Unit) = new ActionExecutor {
+        def execute() = f;
+    }
 
-  implicit def boolgetter2Supplier(f: () => scala.Boolean) = new Supplier[java.lang.Boolean] {
-    def get() = f.apply();
-  }
+    implicit def getter2ItemRepeaterHelper[T](f: T => Unit) = new ItemRepeaterHelper[T] {
+        def process(i: T) = f.apply(i);
+    }
 
-  //implicit def sbool2jbool(bool: scala.Boolean): java.lang.Boolean = new java.lang.Boolean(bool.toString())
+    implicit def getter2ValueSource[T](f: () => T) = new ValueSource[T] {
+        def getValue() = f.apply();
+    }
 
-  def textField = classOf[VisualTextField[_]];
-  def panel = classOf[VisualPanel];
-  def label = classOf[VisualLabel[_]];
-  def combobox = classOf[VisualComboBox[_]];
-  def checkbox = classOf[VisualCheckbox];
-  def radio = classOf[VisualRadioButton];
-  def button = classOf[VisualButton];
+    implicit def getter2Supplier[T](f: () => T) = new Supplier[T] {
+        def get() = f.apply();
+    }
+
+    implicit def setter2Consumer[T](f: T => Unit) = new Consumer[T] {
+        def accept(v: T) = f(v);
+    }
+
+    implicit def lambda2keyUpListener(f: () => Unit) = new KeyUpListener {
+        def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f()
+    }
+
+    //  implicit def lambda2SupplierBoolean(f: => Unit) = new Supplier[java.lang.Boolean] {
+    //    def get(): java.lang.Boolean = f.asInstanceOf[java.lang.Boolean];
+    //  }
+
+    //  implicit def boolgetter2Supplier(f: () => scala.Boolean) = new Supplier[java.lang.Boolean] {
+    //    def get() = f.apply();
+    //  }
+
+    //implicit def sbool2jbool(bool: scala.Boolean): java.lang.Boolean = new java.lang.Boolean(bool.toString())
+
+    def textField = classOf[VisualTextField[_]];
+    def panel = classOf[VisualPanel];
+    def label = classOf[VisualLabel[_]];
+    def combobox = classOf[VisualComboBox[_]];
+    def checkbox = classOf[VisualCheckbox];
+    def radio = classOf[VisualRadioButton];
+    def button = classOf[VisualButton];
+    def link = classOf[VisualLink];
 }
