@@ -9,17 +9,23 @@ import org.w3c.dom.events.EventListener;
 import org.w3c.dom.events.EventTarget;
 
 import com.dragome.commons.javascript.ScriptHelper;
-import com.dragome.services.WebServiceLocator;
 import com.dragome.view.DefaultVisualActivity;
 import com.dragome.web.annotations.PageAlias;
 import com.dragome.web.enhancers.jsdelegate.JsCast;
+import com.dragome.web.html.dom.Window;
 
 @PageAlias(alias= "hello-world")
 public class SimpleExample extends DefaultVisualActivity
 {
 	public void build()
 	{
-		Document document= WebServiceLocator.getInstance().getDomHandler().getDocument();
+
+		ClientApplication.main(null);
+
+		//		Document document= ScriptHelper.evalCasting("document", Document.class, this);
+
+		new Window();
+		Document document= Window.getDocument();
 
 		Element button= document.getElementById("button");
 		final Element messageElement= document.getElementById("message");

@@ -43,6 +43,18 @@
    <version>5.2.1</version>
   </dependency>
 
+  <dependency>
+   <groupId>com.google.inject</groupId>
+   <artifactId>guice</artifactId>
+   <version>2.0-no_aop</version>
+  </dependency>
+
+  <dependency>
+   <groupId>javax</groupId>
+   <artifactId>javaee-web-api</artifactId>
+   <version>6.0</version>
+  </dependency>
+
   <!-- <dependency> -->
   <!-- <groupId>com.dragome</groupId> -->
   <!-- <artifactId>express</artifactId> -->
@@ -146,8 +158,8 @@
     <artifactId>maven-compiler-plugin</artifactId>
     <version>3.1</version>
     <configuration>
-     <source>1.8</source>
-     <target>1.8</target>
+     <source>1.7</source>
+     <target>1.7</target>
     </configuration>
    </plugin>
 
