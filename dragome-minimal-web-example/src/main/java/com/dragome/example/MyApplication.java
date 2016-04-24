@@ -4,26 +4,25 @@ import com.google.inject.Inject;
 
 public class MyApplication
 {
-
-	@Inject(optional=false)
+	@Inject
 	private MessageService service;
 
 	//  constructor based injector
-//	@Inject
-//	public MyApplication(MessageService svc)
-//	{
-//		this.service= svc;
-//	}
-
-	//setter method injector
-	public void setService(MessageService svc)
+	public MyApplication(MessageService svc)
 	{
 		this.service= svc;
 	}
+
+	//setter method injector
 
 	public boolean sendMessage(String msg, String rec)
 	{
 		//some business logic here
 		return service.sendMessage(msg, rec);
+	}
+
+	public void setService(MessageService svc)
+	{
+		this.service= svc;
 	}
 }

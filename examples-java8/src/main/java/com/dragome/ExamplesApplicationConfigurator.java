@@ -10,6 +10,7 @@
  ******************************************************************************/
 package com.dragome;
 
+import java.net.URL;
 import java.util.Arrays;
 
 import org.w3c.dom.websocket.WebSocket;
@@ -53,5 +54,24 @@ public class ExamplesApplicationConfigurator extends DomHandlerApplicationConfig
 	public CompilerType getDefaultCompilerType()
 	{
 		return CompilerType.Standard;
+	}
+
+	public boolean isRemoveUnusedCode()
+	{
+		return true;
+	}
+
+	public URL getAdditionalCodeKeepConfigFile()
+	{
+		return getClass().getResource("/proguard-extra.conf");
+	}
+
+	public boolean filterClassPath(String classpathEntry)
+	{
+		boolean include= super.filterClassPath(classpathEntry);
+		include|= classpathEntry.contains("junit-4.12");
+
+
+		return include;
 	}
 }

@@ -25,15 +25,13 @@ import com.dragome.forms.bindings.builders.Consumer
 
 import Definitions._
 import com.dragome.forms.bindings.builders.TemplateBindingBuilder
-import com.dragome.guia.components.VisualPanelImpl
 
-@PageAlias(alias = "simple-binding")
-class ScalaSimpleBinding() extends GuiaVisualActivity {
+trait HelloProfileRunner extends ScalaBinder {
+
     @BeanProperty var text = ""
     def build {
 
-
-//        bind "textfield" as textField toProperty (getText _, setText _) build;
-//        bind "label" as label toProperty getText _ onClick setText("clicked2") build;
+//        bind to "textfield" as textField toProperty (getText _, setText _) build;
+//        bind to "label" as label toProperty getText _ onClick setText("clicked2") build;
     }
 }

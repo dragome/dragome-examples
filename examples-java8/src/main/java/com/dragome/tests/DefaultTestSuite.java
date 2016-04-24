@@ -1,11 +1,11 @@
 package com.dragome.tests;
 
-import junit.framework.Test;
-import junit.framework.TestSuite;
-
 import com.dragome.tests.lambda.LambdaTest;
 import com.dragome.tests.lambda.TestDefaultMethods;
 import com.dragome.tests.lambda.TestLambda1;
+
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
 public class DefaultTestSuite extends TestSuite
 {

@@ -33,6 +33,7 @@ import com.dragome.forms.bindings.builders.ChildrenBuilder
 import com.dragome.forms.bindings.builders.helpers.BinderHelper._
 import com.dragome.forms.bindings.builders.ActionExecutor
 import com.dragome.forms.bindings.builders.helpers.BinderHelper
+import com.dragome.examples.todo.model.TodoManager
 
 @PageAlias(alias = "simple-binding")
 class TodoPageScala() extends GuiaVisualActivity {
@@ -41,7 +42,6 @@ class TodoPageScala() extends GuiaVisualActivity {
   var todoManager: TodoManager = null;
 
   def as[C](c: Class[C])(cond: Unit) = {
-    BinderHelper bind(""
   }
 
   def bind(c: String): TodoPageScala = {
@@ -66,25 +66,25 @@ class TodoPageScala() extends GuiaVisualActivity {
         bind("toggle-all").as(checkbox)
         {
             showWhen !todoManager.getTodos().isEmpty()
-            toProperty todoManager::isAllChecked, todoManager::setAllChecked 
+            toProperty todoManager::isAllChecked, todoManager::setAllChecked
             onClick todoManager.markAll(!todoManager.isAllChecked())
         }
 
         bind("completed-todo").as(panel)
         {
-            bind("todo-input").as(textfield) 
+            bind("todo-input").as(textfield)
             {
                 toProperty todoManager::getTitle, todoManager::setTitle
                 onKeyUp (v, c) -> todoManager.doneEditing(todo, c == KEY_ESC), KEY_ESC, KEY_ENTER
                 onBlur todoManager.doneEditing(todo, false)
             }
-            bind("title").as(label) 
+            bind("title").as(label)
             {
                 toProperty todoManager::getTitle, todoManager::setTitle
                 onDoubleClick todoManager.editTodo(todo)
             }
 
-            bind("completed").as(checkbox) 
+            bind("completed").as(checkbox)
             {
                 toProperty(todo::isCompleted, todo::setCompleted)
                 onClick todoManager.todoCompleted(todo)
@@ -109,7 +109,7 @@ class TodoPageScala() extends GuiaVisualActivity {
             showWhen todoManager.getCompletedCount() > 0
             onClick todoManager.clearCompletedTodos()
 
-            bind("clear-completed-number").as(label) 
+            bind("clear-completed-number").as(label)
             {
                 toProperty todoManager::getCompletedCount, todoManager::setCompletedCount
             }
