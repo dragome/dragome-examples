@@ -14,8 +14,8 @@ import java.io.File;
 import java.net.URL;
 
 import com.dragome.commons.DragomeConfiguratorImplementor;
-import com.dragome.commons.compiler.ClasspathFileFilter;
 import com.dragome.commons.compiler.CompilerMode;
+import com.dragome.commons.compiler.classpath.ClasspathFileFilter;
 import com.dragome.methodlogger.MethodLoggerConfigurator;
 import com.dragome.web.config.DomHandlerApplicationConfigurator;
 
@@ -65,7 +65,7 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 
 	public boolean isRemoveUnusedCode()
 	{
-		return true;
+		return false;
 	}
 
 	public URL getAdditionalCodeKeepConfigFile()

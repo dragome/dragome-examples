@@ -12,19 +12,14 @@
  */
 package com.dragome.examples.todo
 
-import com.dragome.web.annotations.PageAlias
 import com.dragome.guia.events.listeners.interfaces.ClickListener
 import com.dragome.guia.events.listeners.interfaces.KeyUpListener
-import com.dragome.guia.GuiaVisualActivity
 import com.dragome.forms.bindings.builders.ComponentBuilder
 import com.dragome.guia.components.interfaces.VisualComponent
-import com.dragome.guia.components.interfaces.{ VisualLabel, VisualTextField }
-import scala.beans.BeanProperty
 import com.dragome.forms.bindings.builders.Consumer
 import com.dragome.forms.bindings.builders.Supplier
 import com.dragome.forms.bindings.builders.ActionExecutor
 import com.dragome.guia.components.interfaces.VisualPanel
-import com.dragome.guia.components.interfaces.VisualComboBox
 import com.dragome.guia.components.interfaces.VisualCheckbox
 import com.dragome.guia.components.VisualRadioButton
 import com.dragome.guia.components.interfaces.VisualButton
@@ -33,6 +28,14 @@ import com.dragome.guia.events.listeners.interfaces.BlurListener
 import com.dragome.guia.components.interfaces.VisualLink
 import com.dragome.forms.bindings.client.value.ValueSource
 import com.dragome.forms.bindings.builders.helpers.ItemRepeaterHelper
+import com.dragome.guia.components.VisualRadioButton
+import com.dragome.guia.components.interfaces.VisualButton
+import com.dragome.guia.components.interfaces.VisualCheckbox
+import com.dragome.guia.components.interfaces.VisualLink
+import com.dragome.guia.components.interfaces.VisualPanel
+import com.dragome.guia.components.interfaces.VisualTextField
+import com.dragome.guia.components.interfaces.VisualLabel
+import com.dragome.guia.components.interfaces.VisualComboBox
 
 object Definitions {
     implicit def lambda2clickListener(f: VisualComponent => Unit) = new ClickListener {
@@ -51,9 +54,9 @@ object Definitions {
         def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f(visualComponent, keyCode)
     }
 
-    implicit def lambda2ChildrenBuilder(f: ComponentBuilder => Unit) = new ChildrenBuilder {
-        def build(builder: ComponentBuilder) = f(builder)
-    }
+    //    implicit def lambda2ChildrenBuilder(f: ComponentBuilder => Unit) = new ChildrenBuilder {
+    //        def build(builder: ComponentBuilder) = f(builder)
+    //    }
 
     implicit def lambda2ActionExecutor(f: => Unit) = new ActionExecutor {
         def execute() = f;
@@ -79,17 +82,17 @@ object Definitions {
         def keyupPerformed(visualComponent: VisualComponent, keyCode: Int) = f()
     }
 
-    //  implicit def lambda2SupplierBoolean(f: => Unit) = new Supplier[java.lang.Boolean] {
-    //    def get(): java.lang.Boolean = f.asInstanceOf[java.lang.Boolean];
-    //  }
+    implicit def lambda2SupplierBoolean(f: => Unit) = new Supplier[java.lang.Boolean] {
+        def get(): java.lang.Boolean = f.asInstanceOf[java.lang.Boolean];
+    }
 
-    //  implicit def boolgetter2Supplier(f: () => scala.Boolean) = new Supplier[java.lang.Boolean] {
-    //    def get() = f.apply();
-    //  }
+    implicit def boolgetter2Supplier(f: () => scala.Boolean) = new Supplier[java.lang.Boolean] {
+        def get() = f.apply().asInstanceOf[java.lang.Boolean]
+    }
 
-    //implicit def sbool2jbool(bool: scala.Boolean): java.lang.Boolean = new java.lang.Boolean(bool.toString())
+//    implicit def sbool2jbool(bool: scala.Boolean): java.lang.Boolean = new java.lang.Boolean(bool.toString())
 
-    def textField = classOf[VisualTextField[_]];
+    def textfield = classOf[VisualTextField[_]];
     def panel = classOf[VisualPanel];
     def label = classOf[VisualLabel[_]];
     def combobox = classOf[VisualComboBox[_]];
