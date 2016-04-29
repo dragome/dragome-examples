@@ -1,16 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- 
-<script type="text/javascript" src="dragome-resources/dragome-production.js"></script>
-<script type="text/javascript" src="dragome/dragome.js"></script>
- -->
-<script type="text/javascript" src="dragome-resources/dragome-debug.js"></script>
+    <!--
+    <script type="text/javascript" src="dragome-resources/dragome-production.js"></script>
+    <script type="text/javascript" src="dragome/dragome.js"></script>
+     -->
+    <script type="text/javascript" src="dragome-resources/dragome-debug.js"></script>
 </head>
 <body>
 
-	<input type="text" data-template="textfield" />
-	<span data-template="label"></span>
+<input type="text" data-template="name"/>
+<input type="text" data-template="lastName"/>
+<div>complete name: <span data-template="label"></span> <span data-template="label2"></span> </div>
 
+
+<button data-template="up" value="up" >up</button>
+<button data-template="down" value="down" >down</button>
+
+<span style="left:100px" data-attribute-template-style="position: relative; left: ${template:left}px;top: ${template:top}px;">hola</span>
 </body>
 </html>

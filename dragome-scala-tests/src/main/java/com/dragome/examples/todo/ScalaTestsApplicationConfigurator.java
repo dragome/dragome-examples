@@ -24,7 +24,7 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 {
 	public ScalaTestsApplicationConfigurator()
 	{
-		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator("com.dragome.examples.todo.ScalaSimpleBinding");
+		MethodLoggerConfigurator methodLoggerConfigurator= new MethodLoggerConfigurator("com.dragome.examples.todo");
 		init(methodLoggerConfigurator);
 
 		setClasspathFilter(new ClasspathFileFilter()
@@ -39,16 +39,26 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 
 				boolean result= !(isServerSideOnly || isDebuggingPackage);
 
-				if (string.startsWith("scala/"))
-				{
-					if (!string.substring(6).contains("/"))
-						return result;
-					else if (string.startsWith("scala/runtime"))
-						return true;
-
-					return false;
-				}
-				else
+//				if (string.startsWith("scala/"))
+//				{
+//					if (!string.substring(6).contains("/"))
+//						return result;
+//					else if (string.startsWith("scala/runtime"))
+//						return true;
+//					else if (string.startsWith("scala/collection"))
+//						return true;
+//					else if (string.startsWith("scala/util/control"))
+//						return true;
+//					else if (string.startsWith("scala/math"))
+//						return true;
+//					else if (string.startsWith("scala/util/Either"))
+//						return true;
+//					else if (string.startsWith("scala/util"))
+//						return true;
+//
+//					return false;
+//				}
+//				else
 					return result;
 			}
 		});
@@ -65,7 +75,7 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 
 	public boolean isRemoveUnusedCode()
 	{
-		return false;
+		return true;
 	}
 
 	public URL getAdditionalCodeKeepConfigFile()
