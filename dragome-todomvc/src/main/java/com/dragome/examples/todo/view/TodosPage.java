@@ -27,8 +27,8 @@ import static com.dragome.forms.bindings.builders.helpers.BinderHelper.TEXTFIELD
 import static com.dragome.forms.bindings.builders.helpers.BinderHelper.to;
 import static com.dragome.forms.bindings.builders.helpers.BinderHelper.toListProperty;
 import static com.dragome.forms.bindings.builders.helpers.BinderHelper.toProperty;
-import static com.dragome.guia.events.listeners.interfaces.KeyListener.KEY_ENTER;
-import static com.dragome.guia.events.listeners.interfaces.KeyListener.KEY_ESC;
+import static com.dragome.guia.events.listeners.interfaces.KeyListener.ENTER;
+import static com.dragome.guia.events.listeners.interfaces.KeyListener.ESC;
 
 import java.util.stream.Stream;
 
@@ -55,7 +55,7 @@ public class TodosPage extends GuiaVisualActivity
 		bind("new-todo").as(TEXTFIELD, () ->
 		{
 			toProperty(todoManager::getNewTodo, todoManager::setNewTodo);
-			onKeyUp((v, c) -> todoManager.addTodo(), KEY_ENTER);
+			onKeyUp((v, c) -> todoManager.addTodo(), ENTER);
 		});
 
 		bind("main-section").as(PANEL, () ->
@@ -92,7 +92,7 @@ public class TodosPage extends GuiaVisualActivity
 				bind("todo-input").as(TEXTFIELD, () ->
 				{
 					toProperty(todo::getTitle, todo::setTitle);
-					onKeyUp((v, c) -> todoManager.doneEditing(todo, c == KEY_ESC), KEY_ESC, KEY_ENTER);
+					onKeyUp((v, c) -> todoManager.doneEditing(todo, c == ESC), ESC, ENTER);
 					onBlur(v -> todoManager.doneEditing(todo, false));
 				});
 

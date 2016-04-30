@@ -39,12 +39,12 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 
 				boolean result= !(isServerSideOnly || isDebuggingPackage);
 
-//				if (string.startsWith("scala/"))
-//				{
-//					if (!string.substring(6).contains("/"))
-//						return result;
-//					else if (string.startsWith("scala/runtime"))
-//						return true;
+				if (string.startsWith("scala/"))
+				{
+					if (!string.substring(6).contains("/"))
+						return result;
+					else if (string.startsWith("scala/runtime"))
+						return true;
 //					else if (string.startsWith("scala/collection"))
 //						return true;
 //					else if (string.startsWith("scala/util/control"))
@@ -55,10 +55,10 @@ public class ScalaTestsApplicationConfigurator extends DomHandlerApplicationConf
 //						return true;
 //					else if (string.startsWith("scala/util"))
 //						return true;
-//
-//					return false;
-//				}
-//				else
+
+					return false;
+				}
+				else
 					return result;
 			}
 		});
