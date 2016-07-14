@@ -5,10 +5,18 @@
 </head>
 <body>
 
-<div>
-    <div data-template="node">
-        <span data-template="label"></span>
-        <span data-template="child"></span>
+<div class="calculator">
+    <div class="display"><span data-template="displayValue"></span></div>
+    <div class="digitsKeyboard">
+        <div class="digitKey" data-template="digitKeys">
+            <span data-template="label"></span>
+        </div>
+        <div class="equalSignKey" data-template="equalSign">=</div>
+    </div>
+    <div class="operationsKeyboard">
+        <div class="operationKey" data-template="operationKeys">
+            <span data-template="label"></span>
+        </div>
     </div>
 </div>
 

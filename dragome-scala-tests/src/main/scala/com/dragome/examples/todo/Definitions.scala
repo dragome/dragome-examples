@@ -38,6 +38,7 @@ import com.dragome.guia.components.interfaces.VisualTextField
 import com.dragome.guia.components.interfaces.VisualLabel
 import com.dragome.guia.components.interfaces.VisualComboBox
 import collection.JavaConverters._
+import com.dragome.templates.interfaces.Template
 
 object Definitions {
   implicit def lambda2clickListener(f: VisualComponent => Unit) = new ClickListener {
@@ -245,5 +246,12 @@ object Definitions {
       BinderHelper.start(in)
     }
   }
+
+   object replace {
+    def template(aTemplate: Template) = {
+      BinderHelper.replaceTemplate(aTemplate)
+    }
+  }
+
 
 }
